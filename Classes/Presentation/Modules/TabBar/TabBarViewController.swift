@@ -17,12 +17,31 @@ final class TabBarViewController: UIViewController {
 
     // MARK: - Subviews
 
-    private var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .blue
+    lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
         return view
     }()
+
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .horizontal
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.register(TabBarViewCell.self, forCellWithReuseIdentifier: "cell")
+        view.backgroundColor = .clear
+        return view
+    }()
+
+    var embeddedView: UIView? {
+        didSet {
+            oldValue?.removeFromSuperview()
+            if let view = embeddedView {
+                containerView.addSubview(view)
+            }
+        }
+    }
 
     // MARK: - Lifecycle
 
@@ -48,6 +67,17 @@ final class TabBarViewController: UIViewController {
                 .right()
                 .bottom()
         }
+
+        containerView.configureFrame { maker in
+            maker.top()
+                .left()
+                .right()
+                .bottom(to: collectionView.nui_top)
+        }
+
+        containerView.subviews.configureFrames { maker in
+            maker.top().left().right().bottom()
+        }
     }
 
     // MARK: - Private
@@ -55,8 +85,10 @@ final class TabBarViewController: UIViewController {
     private func setup() {
         view.backgroundColor = .white
         view.addSubview(collectionView)
+        view.addSubview(containerView)
         collectionView.delegate = self
         collectionView.dataSource = self
+        presenter.viewDidLoad()
     }
 }
 
@@ -65,7 +97,9 @@ final class TabBarViewController: UIViewController {
 extension TabBarViewController: TabBarViewInput {
 
     func update(with state: TabBarState, force: Bool, animated: Bool) {
-
+        embeddedView = state.embeddedView
+        view.setNeedsLayout()
+        view.layoutIfNeeded()
     }
 }
 
@@ -73,6 +107,10 @@ extension TabBarViewController: TabBarViewInput {
 
 extension TabBarViewController: UICollectionViewDelegate {
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectCell(with: indexPath)
+        collectionView.reloadData()
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -80,10 +118,34 @@ extension TabBarViewController: UICollectionViewDelegate {
 extension TabBarViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return presenter.state.items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let model = presenter.state.items[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? TabBarViewCell
+        cell?.imageView.image = model.image
+        cell?.titleLabel.text = model.title
+        if indexPath.row == presenter.state.selectedCell {
+            cell?.imageView.tintColor = .bar1A
+            cell?.titleLabel.textColor = .bar1A
+        }
+        else {
+            cell?.imageView.tintColor = .bar2A
+            cell?.titleLabel.textColor = .bar2A
+        }
+        
+        return cell ?? UICollectionViewCell()
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension TabBarViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = view.bounds.width / CGFloat(presenter.state.items.count)
+        return CGSize(width: width, height: 60)
+    }
+}
+

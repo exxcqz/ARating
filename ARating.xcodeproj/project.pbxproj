@@ -33,6 +33,10 @@
 		116CDCC6286C0B390035AF34 /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCC2286C0B390035AF34 /* TabBarState.swift */; };
 		116CDCC9286C0F0B0035AF34 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCC8286C0F0B0035AF34 /* BaseCoordinator.swift */; };
 		116CDCCB286C0F200035AF34 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCCA286C0F200035AF34 /* AppCoordinator.swift */; };
+		116CDCCE286C1CDC0035AF34 /* TabBarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCCD286C1CDC0035AF34 /* TabBarViewCell.swift */; };
+		116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCCF286C20180035AF34 /* TabBarCellModel.swift */; };
+		116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCD2286C258E0035AF34 /* UIColor+App.swift */; };
+		116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCD4286C3EA20035AF34 /* UIColor+Rgb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +81,10 @@
 		116CDCC2286C0B390035AF34 /* TabBarState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
 		116CDCC8286C0F0B0035AF34 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		116CDCCA286C0F200035AF34 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		116CDCCD286C1CDC0035AF34 /* TabBarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewCell.swift; sourceTree = "<group>"; };
+		116CDCCF286C20180035AF34 /* TabBarCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarCellModel.swift; path = ../../../../../../../../Documents/TabBarCellModel.swift; sourceTree = "<group>"; };
+		116CDCD2286C258E0035AF34 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
+		116CDCD4286C3EA20035AF34 /* UIColor+Rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Rgb.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +155,7 @@
 		116CDC7E286B1F120035AF34 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				116CDCD1286C257E0035AF34 /* Extensions */,
 				116CDCC7286C0EEE0035AF34 /* Coordinators */,
 				116CDC81286B1F3A0035AF34 /* Modules */,
 			);
@@ -240,8 +249,19 @@
 		116CDCCC286C1B910035AF34 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				116CDCCD286C1CDC0035AF34 /* TabBarViewCell.swift */,
+				116CDCCF286C20180035AF34 /* TabBarCellModel.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		116CDCD1286C257E0035AF34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				116CDCD2286C258E0035AF34 /* UIColor+App.swift */,
+				116CDCD4286C3EA20035AF34 /* UIColor+Rgb.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,12 +371,16 @@
 				116CDCBA286C05D10035AF34 /* MoviesState.swift in Sources */,
 				116CDCB8286C054B0035AF34 /* MoviesModule.swift in Sources */,
 				116CDCC3286C0B390035AF34 /* TabBarPresenter.swift in Sources */,
+				116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */,
+				116CDCCE286C1CDC0035AF34 /* TabBarViewCell.swift in Sources */,
 				116CDCCB286C0F200035AF34 /* AppCoordinator.swift in Sources */,
 				116CDCBE286C05FF0035AF34 /* MoviesPresenter.swift in Sources */,
 				116CDC69286B1DEF0035AF34 /* AppDelegate.swift in Sources */,
 				116CDCB2286B26160035AF34 /* Strings.swift in Sources */,
 				116CDCB1286B26160035AF34 /* Assets.swift in Sources */,
 				116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */,
+				116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */,
+				116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */,
 				116CDCC4286C0B390035AF34 /* TabBarModule.swift in Sources */,
 				116CDCBC286C05E30035AF34 /* MoviesViewController.swift in Sources */,
 			);

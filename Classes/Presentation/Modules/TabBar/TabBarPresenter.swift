@@ -16,6 +16,17 @@ final class TabBarPresenter {
     init(state: TabBarState) {
         self.state = state
     }
+
+    func didSelectCell(with indexPath: IndexPath) {
+        state.selectedCell = indexPath.row
+        state.embeddedView = state.items[indexPath.row].viewController.view
+        view?.update(with: state, force: false, animated: true)
+    }
+
+    func viewDidLoad() {
+        state.embeddedView = state.items[state.selectedCell].viewController.view
+        view?.update(with: state, force: false, animated: true)
+    }
 }
 
 // MARK: - MoviesModuleInput

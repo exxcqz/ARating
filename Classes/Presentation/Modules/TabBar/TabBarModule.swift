@@ -30,7 +30,7 @@ final class TabBarModule {
         return presenter
     }
 
-    init(state: TabBarState = .init()) {
+    init(state: TabBarState) {
         let presenter = TabBarPresenter(state: state)
         let viewController = TabBarViewController(presenter: presenter)
         presenter.view = viewController
