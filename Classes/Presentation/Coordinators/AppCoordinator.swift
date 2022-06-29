@@ -28,16 +28,16 @@ final class AppCoordinator: BaseCoordinator<UINavigationController> {
         let moviesModule = createMoviesModule()
 
         let tabBarItems: [TabBarCellModel] = [
-            TabBarCellModel(viewController: moviesModule.viewController, image: Asset.icMovies.image, title: "Movies"),
-            TabBarCellModel(viewController: UIViewController(), image: Asset.icSearch.image, title: "Search")
+            TabBarCellModel(viewController: moviesModule.viewController, image: Asset.icMovies.image, title: L10n.Tabbar.Top.title),
+            TabBarCellModel(viewController: UIViewController(), image: Asset.icSearch.image, title: L10n.Tabbar.Search.title)
         ]
         let tabBarModule = TabBarModule(state: TabBarState(items: tabBarItems))
         tabBarModule.output = self
         rootViewController.pushViewController(tabBarModule.viewController, animated: true)
     }
 
-    private func createMoviesModule() -> MoviesModule {
-        let module = MoviesModule()
+    private func createMoviesModule() -> TopListModule {
+        let module = TopListModule()
         module.output = self
         return module
     }
@@ -52,9 +52,9 @@ extension AppCoordinator: TabBarModuleOutput {
     }
 }
 
-extension AppCoordinator: MoviesModuleOutput {
+extension AppCoordinator: TopListModuleOutput {
 
-    func moviesTappedEventTriggered(_ moduleInput: MoviesModuleInput) {
+    func moviesTappedEventTriggered(_ moduleInput: TopListModuleInput) {
 
     }
 }

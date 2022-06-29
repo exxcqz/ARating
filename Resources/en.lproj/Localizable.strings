@@ -1,3 +1,9 @@
 //
 //  Copyright ©  Rosberry. All rights reserved.
 //
+
+"tabbar.top.title" = "Top";
+"tabbar.search.title" = "Search";
+
+"movies.now.title" = "Now";
+"movies.top.title" = "Top";

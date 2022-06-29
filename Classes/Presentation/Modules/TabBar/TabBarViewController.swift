@@ -127,12 +127,12 @@ extension TabBarViewController: UICollectionViewDataSource {
         cell?.imageView.image = model.image
         cell?.titleLabel.text = model.title
         if indexPath.row == presenter.state.selectedCell {
-            cell?.imageView.tintColor = .bar1A
-            cell?.titleLabel.textColor = .bar1A
+            cell?.imageView.tintColor = .main3A
+            cell?.titleLabel.textColor = .main3A
         }
         else {
-            cell?.imageView.tintColor = .bar2A
-            cell?.titleLabel.textColor = .bar2A
+            cell?.imageView.tintColor = .main4A
+            cell?.titleLabel.textColor = .main4A
         }
         
         return cell ?? UICollectionViewCell()

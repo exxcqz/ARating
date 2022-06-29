@@ -10,8 +10,10 @@ import UIKit
 extension UIColor {
 
     static let main1A: UIColor = .black
-    static let main2A: UIColor = .white
+    static let main1B: UIColor = .init(red: 0, green: 0, blue: 0, alpha: 0.01)
 
-    static let bar1A: UIColor = .init(r: 249, g: 159, b: 0)
-    static let bar2A: UIColor = .init(r: 153, g: 153, b: 153)
+    static let main2A: UIColor = .white
+    
+    static let main3A: UIColor = .init(r: 249, g: 159, b: 0)
+    static let main4A: UIColor = .init(r: 153, g: 153, b: 153)
 }

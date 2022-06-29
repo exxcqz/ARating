@@ -7,20 +7,20 @@
 
 import Foundation
 
-final class MoviesPresenter {
-    var view: MoviesViewInput?
-    var output: MoviesModuleOutput?
+final class TopListPresenter {
+    var view: TopListViewInput?
+    var output: TopListModuleOutput?
 
-    var state: MoviesState
+    var state: TopListState
 
-    init(state: MoviesState) {
+    init(state: TopListState) {
         self.state = state
     }
 }
 
 // MARK: - MoviesModuleInput
 
-extension MoviesPresenter: MoviesModuleInput {
+extension TopListPresenter: TopListModuleInput {
 
     func update(force: Bool, animated: Bool) {
 
