@@ -24,6 +24,7 @@ final class TopListViewController: UIViewController {
         layout.scrollDirection = .vertical
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(TopListViewCell.self, forCellWithReuseIdentifier: "cell")
+        view.register(TopListIndicatorViewCell.self, forCellWithReuseIdentifier: "indicator")
         view.showsVerticalScrollIndicator = false
         view.backgroundColor = .clear
         return view
@@ -64,7 +65,7 @@ final class TopListViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
-        presenter.fetchItems(page: 1)
+        presenter.fetchItems()
     }
 }
 
@@ -91,16 +92,32 @@ extension TopListViewController: UICollectionViewDelegate {
 extension TopListViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if presenter.state.items.count > 0 && presenter.state.currentPage < presenter.state.totalPage {
+            return presenter.state.items.count + 1
+        }
         return presenter.state.items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row >= presenter.state.items.count {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "indicator", for: indexPath) as? TopListIndicatorViewCell
+            cell?.indicatorView.startAnimating()
+            return cell ?? UICollectionViewCell()
+        }
         let model = presenter.state.items[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? TopListViewCell
+        if model.image == nil {
+            collectionView.reloadData()
+        }
         cell?.imageView.image = model.image
         cell?.titleLabel.text = model.title.uppercased()
         cell?.ratingLabel.text = String(model.rating)
-        cell?.yearLabel.text = String(model.year)
+        if model.year == 0 {
+            cell?.yearLabel.text = ""
+        }
+        else {
+            cell?.yearLabel.text = String(model.year)
+        }
 
         return cell ?? UICollectionViewCell()
     }
@@ -113,6 +130,21 @@ extension TopListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.bounds.width - 60) / 2
         return CGSize(width: width, height: 240)
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension TopListViewController: UIScrollViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        if offset > (contentHeight - scrollView.frame.height - 100) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presenter.fetchItems()
+            }
+        }
     }
 }
 

@@ -38,7 +38,6 @@ enum NetworkType {
             return request
         case .getTopList:
             request.httpMethod = "GET"
-            print(request.url)
             return request
         }
     }

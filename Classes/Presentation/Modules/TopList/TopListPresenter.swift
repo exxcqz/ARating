@@ -16,26 +16,38 @@ final class TopListPresenter {
     var output: TopListModuleOutput?
 
     var state: TopListState
-    private var dependencies: Dependencies
+    var dependencies: Dependencies
 
     init(state: TopListState, dependencies: Dependencies) {
         self.state = state
         self.dependencies = dependencies
     }
 
-    func fetchItems(page: Int) {
-        dependencies.networkService.fetchTopListItems(page: 1) { result, error in
-            if let _ = error {
-                return
+    func fetchItems() {
+        if !state.isEventScroll {
+            dependencies.networkService.fetchTopListItems(page: state.currentPage) { result, error in
+                if let _ = error {
+                    return
+                }
+                guard let result = result else {
+                    return
+                }
+                for item in result.data {
+                    let model = TopListCellModel(url: item.images.jpg.imageUrl,
+                                                 title: item.title ?? "",
+                                                 year: item.year ?? 0,
+                                                 rating: item.score ?? 0,
+                                                 presenter: self)
+                    self.state.items.append(model)
+                }
+                self.state.currentPage += 1
+                self.state.totalPage = result.pagination.lastVisiblePage
+                self.update(force: false, animated: true)
             }
-            guard let result = result else {
-                return
+            state.isEventScroll = true
+            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+                self.state.isEventScroll = false
             }
-            let items = result.data
-            self.state.items = items.map { item in
-                TopListCellModel(image: Asset.test.image, title: item.title ?? "", year: item.year ?? 0, rating: item.score ?? 0)
-            }
-            self.view?.update(with: self.state, force: false, animated: true)
         }
     }
 }
@@ -45,6 +57,6 @@ final class TopListPresenter {
 extension TopListPresenter: TopListModuleInput {
 
     func update(force: Bool, animated: Bool) {
-
+        view?.update(with: state, force: force, animated: animated)
     }
 }

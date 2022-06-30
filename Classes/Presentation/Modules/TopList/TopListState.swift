@@ -9,5 +9,7 @@ import Foundation
 
 final class TopListState {
     var items: [TopListCellModel] = []
-    var dataItems: [AnimeInfo] = []
+    var currentPage: Int = 1
+    var totalPage: Int = 1
+    var isEventScroll: Bool = false
 }

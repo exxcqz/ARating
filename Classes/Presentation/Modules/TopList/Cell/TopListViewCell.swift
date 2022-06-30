@@ -31,7 +31,7 @@ final class TopListViewCell: UICollectionViewCell {
         return view
     }()
 
-    private lazy var arcView: UIView = {
+    private lazy var ratingBackdropView: UIView = {
         let view = UIView()
         view.backgroundColor = .main3A
         return view
@@ -55,7 +55,7 @@ final class TopListViewCell: UICollectionViewCell {
 
     lazy var ratingLabel: UILabel = {
         let view = UILabel()
-        view.font = .proDisplayMediumFont(ofSize: 20)
+        view.font = .proDisplayMediumFont(ofSize: 14)
         view.textColor = .main2A
         view.textAlignment = .center
         return view
@@ -90,11 +90,11 @@ final class TopListViewCell: UICollectionViewCell {
                 .bottom()
         }
 
-        arcView.configureFrame { maker in
-            maker.size(width: 30, height: 30)
+        ratingBackdropView.configureFrame { maker in
+            maker.size(width: 35, height: 19)
                 .top(to: containerView.nui_top, inset: 10)
                 .right(to: containerView.nui_right, inset: 10)
-                .cornerRadius(15)
+                .cornerRadius(3)
         }
 
         titleLabel.configureFrame { maker in
@@ -112,7 +112,7 @@ final class TopListViewCell: UICollectionViewCell {
 
         ratingLabel.configureFrame { maker in
             maker.sizeToFit()
-                .center(to: arcView)
+                .center(to: ratingBackdropView)
         }
     }
 
@@ -121,7 +121,7 @@ final class TopListViewCell: UICollectionViewCell {
     private func setup() {
         addSubview(containerView)
         containerView.addSubview(imageView)
-        containerView.addSubview(arcView)
+        containerView.addSubview(ratingBackdropView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(yearLabel)
         containerView.addSubview(ratingLabel)
