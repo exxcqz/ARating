@@ -1,0 +1,33 @@
+//
+//  NetworkRequest.swift
+//  ARating
+//
+//  Created by Nikita Gavrikov on 29.06.2022.
+//
+
+import Foundation
+
+final class NetworkRequest {
+    static let shared = NetworkRequest()
+
+    private var task: URLSessionDataTask?
+
+    private init() {}
+
+    func requestData(request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+        if let task = task {
+            task.cancel()
+        }
+        task = URLSession.shared.dataTask(with: request) { data, _, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                guard let data = data else { return }
+                completion(.success(data))
+            }
+        }
+        task?.resume()
+    }
+}

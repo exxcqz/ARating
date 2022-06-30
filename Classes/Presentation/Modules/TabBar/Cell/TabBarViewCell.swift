@@ -18,6 +18,9 @@ final class TabBarViewCell: UICollectionViewCell {
 
     lazy var titleLabel: UILabel = {
         let view = UILabel()
+        view.font = .proDisplayRegularFont(ofSize: 10)
+        view.textColor = .main4A
+        view.textAlignment = .center
         return view
     }()
 

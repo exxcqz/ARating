@@ -24,6 +24,7 @@ final class TopListViewController: UIViewController {
         layout.scrollDirection = .vertical
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(TopListViewCell.self, forCellWithReuseIdentifier: "cell")
+        view.showsVerticalScrollIndicator = false
         view.backgroundColor = .clear
         return view
     }()
@@ -63,6 +64,7 @@ final class TopListViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
+        presenter.fetchItems(page: 1)
     }
 }
 
@@ -71,7 +73,7 @@ final class TopListViewController: UIViewController {
 extension TopListViewController: TopListViewInput {
 
     func update(with state: TopListState, force: Bool, animated: Bool) {
-
+        collectionView.reloadData()
     }
 }
 
@@ -80,7 +82,7 @@ extension TopListViewController: TopListViewInput {
 extension TopListViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(1)
+        print(indexPath.row)
     }
 }
 

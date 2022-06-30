@@ -40,6 +40,14 @@
 		116CDCD8286C50150035AF34 /* TopListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCD7286C50150035AF34 /* TopListViewCell.swift */; };
 		116CDCDA286C53C80035AF34 /* TopListCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCD9286C53C80035AF34 /* TopListCellModel.swift */; };
 		116CDCDC286C58D70035AF34 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCDB286C58D70035AF34 /* UIFont+App.swift */; };
+		116CDCDE286C68B60035AF34 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCDD286C68B60035AF34 /* NetworkService.swift */; };
+		116CDCE0286C69650035AF34 /* ServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCDF286C69650035AF34 /* ServicesFactory.swift */; };
+		116CDCE3286C6A870035AF34 /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCE2286C6A870035AF34 /* NetworkType.swift */; };
+		116CDCE5286C70230035AF34 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCE4286C70230035AF34 /* NetworkRequest.swift */; };
+		116CDCE8286C70740035AF34 /* NetworkServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCE7286C70740035AF34 /* NetworkServiceImp.swift */; };
+		116CDCEB286C73340035AF34 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCEA286C73340035AF34 /* DataResult.swift */; };
+		116CDCED286C74760035AF34 /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCEC286C74760035AF34 /* PageInfo.swift */; };
+		116CDCEF286C76B40035AF34 /* AnimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCEE286C76B40035AF34 /* AnimeInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +99,14 @@
 		116CDCD7286C50150035AF34 /* TopListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewCell.swift; sourceTree = "<group>"; };
 		116CDCD9286C53C80035AF34 /* TopListCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCellModel.swift; sourceTree = "<group>"; };
 		116CDCDB286C58D70035AF34 /* UIFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
+		116CDCDD286C68B60035AF34 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		116CDCDF286C69650035AF34 /* ServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesFactory.swift; sourceTree = "<group>"; };
+		116CDCE2286C6A870035AF34 /* NetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
+		116CDCE4286C70230035AF34 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		116CDCE7286C70740035AF34 /* NetworkServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImp.swift; sourceTree = "<group>"; };
+		116CDCEA286C73340035AF34 /* DataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResult.swift; sourceTree = "<group>"; };
+		116CDCEC286C74760035AF34 /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
+		116CDCEE286C76B40035AF34 /* AnimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +194,11 @@
 		116CDC80286B1F250035AF34 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				116CDCE6286C705D0035AF34 /* NetworkService */,
+				116CDCE2286C6A870035AF34 /* NetworkType.swift */,
+				116CDCE4286C70230035AF34 /* NetworkRequest.swift */,
+				116CDCDF286C69650035AF34 /* ServicesFactory.swift */,
+				116CDCE9286C71FD0035AF34 /* Models */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -281,6 +302,25 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		116CDCE6286C705D0035AF34 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				116CDCDD286C68B60035AF34 /* NetworkService.swift */,
+				116CDCE7286C70740035AF34 /* NetworkServiceImp.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		116CDCE9286C71FD0035AF34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				116CDCEA286C73340035AF34 /* DataResult.swift */,
+				116CDCEC286C74760035AF34 /* PageInfo.swift */,
+				116CDCEE286C76B40035AF34 /* AnimeInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,11 +422,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116CDCEB286C73340035AF34 /* DataResult.swift in Sources */,
+				116CDCE3286C6A870035AF34 /* NetworkType.swift in Sources */,
+				116CDCDE286C68B60035AF34 /* NetworkService.swift in Sources */,
 				116CDCC6286C0B390035AF34 /* TabBarState.swift in Sources */,
 				116CDCC5286C0B390035AF34 /* TabBarViewController.swift in Sources */,
+				116CDCEF286C76B40035AF34 /* AnimeInfo.swift in Sources */,
 				116CDCC9286C0F0B0035AF34 /* BaseCoordinator.swift in Sources */,
 				116CDCBA286C05D10035AF34 /* TopListState.swift in Sources */,
 				116CDCB8286C054B0035AF34 /* TopListModule.swift in Sources */,
+				116CDCE0286C69650035AF34 /* ServicesFactory.swift in Sources */,
 				116CDCC3286C0B390035AF34 /* TabBarPresenter.swift in Sources */,
 				116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */,
 				116CDCCE286C1CDC0035AF34 /* TabBarViewCell.swift in Sources */,
@@ -399,10 +444,13 @@
 				116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */,
 				116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */,
 				116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */,
+				116CDCED286C74760035AF34 /* PageInfo.swift in Sources */,
 				116CDCDA286C53C80035AF34 /* TopListCellModel.swift in Sources */,
 				116CDCC4286C0B390035AF34 /* TabBarModule.swift in Sources */,
 				116CDCDC286C58D70035AF34 /* UIFont+App.swift in Sources */,
+				116CDCE8286C70740035AF34 /* NetworkServiceImp.swift in Sources */,
 				116CDCBC286C05E30035AF34 /* TopListViewController.swift in Sources */,
+				116CDCE5286C70230035AF34 /* NetworkRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

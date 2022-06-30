@@ -8,11 +8,6 @@
 import Foundation
 
 final class TopListState {
-    var items: [TopListCellModel] = [
-        TopListCellModel(image: Asset.test.image, title: "Batman Batman Batman Batman", year: 2008, rating: 10),
-        TopListCellModel(image: Asset.test.image, title: "Batman", year: 2008, rating: 10),
-        TopListCellModel(image: Asset.test.image, title: "Batman", year: 2008, rating: 10),
-        TopListCellModel(image: Asset.test.image, title: "Batman", year: 2008, rating: 10),
-        TopListCellModel(image: Asset.test.image, title: "Batman", year: 2008, rating: 10)
-    ]
+    var items: [TopListCellModel] = []
+    var dataItems: [AnimeInfo] = []
 }

@@ -31,7 +31,7 @@ final class TopListModule {
     }
 
     init(state: TopListState = .init()) {
-        let presenter = TopListPresenter(state: state)
+        let presenter = TopListPresenter(state: state, dependencies: Services)
         let viewController = TopListViewController(presenter: presenter)
         presenter.view = viewController
         self.presenter = presenter

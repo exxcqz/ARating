@@ -125,7 +125,7 @@ extension TabBarViewController: UICollectionViewDataSource {
         let model = presenter.state.items[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? TabBarViewCell
         cell?.imageView.image = model.image
-        cell?.titleLabel.text = model.title
+        cell?.titleLabel.text = model.title.uppercased()
         if indexPath.row == presenter.state.selectedCell {
             cell?.imageView.tintColor = .main3A
             cell?.titleLabel.textColor = .main3A

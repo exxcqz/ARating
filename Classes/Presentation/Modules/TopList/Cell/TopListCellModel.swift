@@ -11,9 +11,9 @@ final class TopListCellModel {
     var image: UIImage
     var title: String
     var year: Int
-    var rating: Int
+    var rating: Double
 
-    init(image: UIImage, title: String, year: Int, rating: Int) {
+    init(image: UIImage, title: String, year: Int, rating: Double) {
         self.image = image
         self.title = title
         self.year = year
