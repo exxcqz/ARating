@@ -151,6 +151,3 @@ extension TopListViewController: UIScrollViewDelegate {
         collectionView.reloadData()
     }
 }
-
-
-

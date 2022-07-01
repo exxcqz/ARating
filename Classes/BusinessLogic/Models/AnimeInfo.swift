@@ -22,6 +22,7 @@ struct AnimeInfo: Codable {
     let favorites: Int?
     let synopsis: String?
     let year: Int?
+    let genres: [Genre]
 
     enum CodingKeys: String, CodingKey {
         case id = "mal_id"
@@ -38,6 +39,7 @@ struct AnimeInfo: Codable {
         case favorites
         case synopsis
         case year
+        case genres
     }
 }
 
@@ -54,5 +56,19 @@ struct ImagesData: Codable {
         case imageUrl = "image_url"
         case smallImageUrl = "small_image_url"
         case largeImageUrl = "large_image_url"
+    }
+}
+
+struct Genre: Codable {
+    let id: Int
+    let type: String
+    let name: String
+    let url: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "mal_id"
+        case type
+        case name
+        case url
     }
 }

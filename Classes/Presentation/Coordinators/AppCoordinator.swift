@@ -63,7 +63,7 @@ extension AppCoordinator: TopListModuleOutput {
 
     func topListCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeInfo: AnimeInfo) {
         let animeDetailsModule = createAnimeDetailsModule(animeInfo: animeInfo)
-        rootViewController.pushViewController(animeDetailsModule.viewController, animated: true)
+        rootViewController.pushViewController(animeDetailsModule.viewController, animated: false)
     }
 }
 

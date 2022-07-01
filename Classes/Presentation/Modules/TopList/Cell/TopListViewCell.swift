@@ -98,10 +98,10 @@ final class TopListViewCell: UICollectionViewCell {
         }
 
         titleLabel.configureFrame { maker in
-            maker.sizeThatFits(size: .init(width: bounds.width - 20, height: 50))
+            maker.sizeThatFits(size: .init(width: bounds.width - 20, height: 30))
                 .left(to: containerView.nui_left, inset: 10)
                 .right(to: containerView.nui_right,inset: 10)
-                .bottom(to: containerView.nui_bottom, inset: 11)
+                .bottom(to: containerView.nui_bottom, inset: 9)
         }
 
         yearLabel.configureFrame { maker in

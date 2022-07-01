@@ -13,7 +13,7 @@ extension UIFont {
         return .init(name: name, size: size) ?? .systemFont(ofSize: size)
     }
 
-    static func oroTextSemiboldFont(ofSize size: CGFloat) -> UIFont {
+    static func proTextSemiboldFont(ofSize size: CGFloat) -> UIFont {
         return .font(name: "SFProText-Semibold", size: size)
     }
 

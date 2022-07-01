@@ -14,11 +14,14 @@ final class AnimeDetailsState {
     var title: String
     var year: Int
     var rating: Double
+    var synopsis: String
+    var genres: String = ""
 
     init(animeInfo: AnimeInfo) {
         self.animeInfo = animeInfo
         self.title = animeInfo.englishTitle ?? animeInfo.title ?? ""
         self.year = animeInfo.year ?? 0
         self.rating = animeInfo.score ?? 0
+        self.synopsis = animeInfo.synopsis ?? ""
     }
 }

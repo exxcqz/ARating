@@ -22,6 +22,7 @@ final class AnimeDetailsPresenter {
     }
 
     func viewDidLoad() {
+        updateLabels()
         fetchImage()
     }
 
@@ -31,6 +32,11 @@ final class AnimeDetailsPresenter {
             self.state.image = image
             self.update(force: false, animated: true)
         }
+    }
+
+    private func updateLabels() {
+        let genres = state.animeInfo.genres.map { $0.name }
+        state.genres = genres.joined(separator: ", ")
     }
 }
 
