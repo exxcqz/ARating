@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TopListModuleOutput {
-    func moviesTappedEventTriggered(_ moduleInput: TopListModuleInput)
+    func topListCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeInfo: AnimeInfo)
 }
 
 protocol TopListModuleInput: AnyObject {

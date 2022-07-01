@@ -62,14 +62,14 @@ final class TabBarViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.configureFrame { maker in
-            maker.height(83)
+            maker.height(83 * Layout.scaleFactorH)
                 .left()
                 .right()
                 .bottom()
         }
 
         containerView.configureFrame { maker in
-            maker.top()
+            maker.top(inset: view.safeAreaInsets.top)
                 .left()
                 .right()
                 .bottom(to: collectionView.nui_top)
@@ -98,6 +98,7 @@ extension TabBarViewController: TabBarViewInput {
 
     func update(with state: TabBarState, force: Bool, animated: Bool) {
         embeddedView = state.embeddedView
+        navigationItem.title = state.items[state.selectedCell].title
         view.setNeedsLayout()
         view.layoutIfNeeded()
     }

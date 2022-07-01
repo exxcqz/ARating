@@ -9,23 +9,24 @@ import UIKit
 
 final class TopListCellModel {
     var image: UIImage?
-    var url: String
+    var animeInfo: AnimeInfo
     var title: String
     var year: Int
     var rating: Double
     var presenter: TopListPresenter
 
-    init(url: String, title: String, year: Int, rating: Double, presenter: TopListPresenter) {
-        self.url = url
-        self.title = title
-        self.year = year
-        self.rating = rating
+    init(animeInfo: AnimeInfo, presenter: TopListPresenter) {
+        self.animeInfo = animeInfo
         self.presenter = presenter
+        self.title = animeInfo.englishTitle ?? animeInfo.title ?? ""
+        self.year = animeInfo.year ?? 0
+        self.rating = animeInfo.score ?? 0
         fetchImage()
     }
 
     private func fetchImage() {
-        presenter.dependencies.networkService.fetchImage(url: url) { result in
+        let imageUrl = animeInfo.images.jpg.imageUrl
+        presenter.dependencies.networkService.fetchImage(url: imageUrl) { result in
             self.image = result
         }
     }

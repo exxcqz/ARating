@@ -49,7 +49,7 @@ final class TopListViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.configureFrame { maker in
-            maker.top(inset: 148)
+            maker.top()
                 .left()
                 .right()
                 .bottom()
@@ -83,7 +83,7 @@ extension TopListViewController: TopListViewInput {
 extension TopListViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        presenter.cellTappedEventTriggered(with: indexPath)
     }
 }
 
@@ -110,8 +110,8 @@ extension TopListViewController: UICollectionViewDataSource {
             collectionView.reloadData()
         }
         cell?.imageView.image = model.image
-        cell?.titleLabel.text = model.title.uppercased()
         cell?.ratingLabel.text = String(model.rating)
+        cell?.titleLabel.text = model.title.uppercased()
         if model.year == 0 {
             cell?.yearLabel.text = ""
         }
@@ -129,7 +129,7 @@ extension TopListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.bounds.width - 60) / 2
-        return CGSize(width: width, height: 240)
+        return CGSize(width: width, height: 240 * Layout.scaleFactorH)
     }
 }
 
@@ -145,6 +145,10 @@ extension TopListViewController: UIScrollViewDelegate {
                 self.presenter.fetchItems()
             }
         }
+    }
+
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        collectionView.reloadData()
     }
 }
 

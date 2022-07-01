@@ -49,6 +49,11 @@
 		116CDCED286C74760035AF34 /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCEC286C74760035AF34 /* PageInfo.swift */; };
 		116CDCEF286C76B40035AF34 /* AnimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCEE286C76B40035AF34 /* AnimeInfo.swift */; };
 		116CDCF3286D86D00035AF34 /* TopListIndicatorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCF2286D86D00035AF34 /* TopListIndicatorViewCell.swift */; };
+		116CDCFE286DBB780035AF34 /* AnimeDetailsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCFD286DBB780035AF34 /* AnimeDetailsModule.swift */; };
+		116CDD00286DBB8A0035AF34 /* AnimeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCFF286DBB8A0035AF34 /* AnimeDetailsViewController.swift */; };
+		116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD01286DBB960035AF34 /* AnimeDetailsState.swift */; };
+		116CDD04286DBBAF0035AF34 /* AnimeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD03286DBBAF0035AF34 /* AnimeDetailsPresenter.swift */; };
+		116CDD06286EC66E0035AF34 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD05286EC66E0035AF34 /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +114,11 @@
 		116CDCEC286C74760035AF34 /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
 		116CDCEE286C76B40035AF34 /* AnimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeInfo.swift; sourceTree = "<group>"; };
 		116CDCF2286D86D00035AF34 /* TopListIndicatorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListIndicatorViewCell.swift; sourceTree = "<group>"; };
+		116CDCFD286DBB780035AF34 /* AnimeDetailsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsModule.swift; sourceTree = "<group>"; };
+		116CDCFF286DBB8A0035AF34 /* AnimeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsViewController.swift; sourceTree = "<group>"; };
+		116CDD01286DBB960035AF34 /* AnimeDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsState.swift; sourceTree = "<group>"; };
+		116CDD03286DBBAF0035AF34 /* AnimeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsPresenter.swift; sourceTree = "<group>"; };
+		116CDD05286EC66E0035AF34 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +182,7 @@
 				116CDC71286B1DF40035AF34 /* Assets.xcassets */,
 				116CDCAF286B26160035AF34 /* Assets.swift */,
 				116CDCB0286B26160035AF34 /* Strings.swift */,
+				116CDD05286EC66E0035AF34 /* Layout.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -208,9 +219,9 @@
 		116CDC81286B1F3A0035AF34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				116CDCFC286D9D8E0035AF34 /* AnimeDetails */,
 				116CDCB6286C05110035AF34 /* TabBar */,
 				116CDCB3286B2FB70035AF34 /* TopList */,
-				116CDCB5286B2FCF0035AF34 /* MovieDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -246,13 +257,6 @@
 				116CDCBD286C05FF0035AF34 /* TopListPresenter.swift */,
 			);
 			path = TopList;
-			sourceTree = "<group>";
-		};
-		116CDCB5286B2FCF0035AF34 /* MovieDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 		116CDCB6286C05110035AF34 /* TabBar */ = {
@@ -322,6 +326,17 @@
 				116CDCEE286C76B40035AF34 /* AnimeInfo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		116CDCFC286D9D8E0035AF34 /* AnimeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				116CDCFD286DBB780035AF34 /* AnimeDetailsModule.swift */,
+				116CDCFF286DBB8A0035AF34 /* AnimeDetailsViewController.swift */,
+				116CDD01286DBB960035AF34 /* AnimeDetailsState.swift */,
+				116CDD03286DBBAF0035AF34 /* AnimeDetailsPresenter.swift */,
+			);
+			path = AnimeDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,6 +451,7 @@
 				116CDCBA286C05D10035AF34 /* TopListState.swift in Sources */,
 				116CDCB8286C054B0035AF34 /* TopListModule.swift in Sources */,
 				116CDCE0286C69650035AF34 /* ServicesFactory.swift in Sources */,
+				116CDCFE286DBB780035AF34 /* AnimeDetailsModule.swift in Sources */,
 				116CDCC3286C0B390035AF34 /* TabBarPresenter.swift in Sources */,
 				116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */,
 				116CDCCE286C1CDC0035AF34 /* TabBarViewCell.swift in Sources */,
@@ -446,13 +462,17 @@
 				116CDCD8286C50150035AF34 /* TopListViewCell.swift in Sources */,
 				116CDCB1286B26160035AF34 /* Assets.swift in Sources */,
 				116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */,
+				116CDD00286DBB8A0035AF34 /* AnimeDetailsViewController.swift in Sources */,
 				116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */,
 				116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */,
+				116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */,
+				116CDD04286DBBAF0035AF34 /* AnimeDetailsPresenter.swift in Sources */,
 				116CDCED286C74760035AF34 /* PageInfo.swift in Sources */,
 				116CDCDA286C53C80035AF34 /* TopListCellModel.swift in Sources */,
 				116CDCC4286C0B390035AF34 /* TabBarModule.swift in Sources */,
 				116CDCDC286C58D70035AF34 /* UIFont+App.swift in Sources */,
 				116CDCE8286C70740035AF34 /* NetworkServiceImp.swift in Sources */,
+				116CDD06286EC66E0035AF34 /* Layout.swift in Sources */,
 				116CDCBC286C05E30035AF34 /* TopListViewController.swift in Sources */,
 				116CDCE5286C70230035AF34 /* NetworkRequest.swift in Sources */,
 			);
@@ -609,7 +629,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ARating;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -639,7 +659,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ARating;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

@@ -33,11 +33,7 @@ final class TopListPresenter {
                     return
                 }
                 for item in result.data {
-                    let model = TopListCellModel(url: item.images.jpg.imageUrl,
-                                                 title: item.title ?? "",
-                                                 year: item.year ?? 0,
-                                                 rating: item.score ?? 0,
-                                                 presenter: self)
+                    let model = TopListCellModel(animeInfo: item, presenter: self)
                     self.state.items.append(model)
                 }
                 self.state.currentPage += 1
@@ -49,6 +45,11 @@ final class TopListPresenter {
                 self.state.isEventScroll = false
             }
         }
+    }
+
+    func cellTappedEventTriggered(with indexPath: IndexPath) {
+        let model = state.items[indexPath.row]
+        output?.topListCellTappedEventTriggered(self, animeInfo: model.animeInfo)
     }
 }
 
