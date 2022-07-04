@@ -34,6 +34,10 @@ final class AnimeDetailsPresenter {
         update(force: false, animated: true)
     }
 
+    func presentSynopsisViewController() {
+        output?.animeDetailsSynopsisTappedEventTriggered(synopsis: state.synopsis)
+    }
+
     // MARK: - Private
 
     private func fetchImage() {

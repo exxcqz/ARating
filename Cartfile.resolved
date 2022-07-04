@@ -1,3 +1,4 @@
 github "onmyway133/DeepDiff" "2.3.3"
+github "realm/realm-swift" "vv10.28.2"
 github "rosberry/CollectionViewTools" "0.1.7"
 github "rosberry/Framezilla" "5.1.2"

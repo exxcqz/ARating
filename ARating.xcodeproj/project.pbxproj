@@ -54,6 +54,9 @@
 		116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD01286DBB960035AF34 /* AnimeDetailsState.swift */; };
 		116CDD04286DBBAF0035AF34 /* AnimeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD03286DBBAF0035AF34 /* AnimeDetailsPresenter.swift */; };
 		116CDD06286EC66E0035AF34 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD05286EC66E0035AF34 /* Layout.swift */; };
+		116E83532872D1CA00B6E457 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116E83522872D1CA00B6E457 /* Realm.xcframework */; };
+		116E83542872D1CA00B6E457 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 116E83522872D1CA00B6E457 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		116E83572872D3C700B6E457 /* SynopsisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E83562872D3C700B6E457 /* SynopsisViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +67,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				116CDCA7286B24E70035AF34 /* Framezilla.xcframework in Embed Frameworks */,
+				116E83542872D1CA00B6E457 /* Realm.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +123,8 @@
 		116CDD01286DBB960035AF34 /* AnimeDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsState.swift; sourceTree = "<group>"; };
 		116CDD03286DBBAF0035AF34 /* AnimeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsPresenter.swift; sourceTree = "<group>"; };
 		116CDD05286EC66E0035AF34 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		116E83522872D1CA00B6E457 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
+		116E83562872D3C700B6E457 /* SynopsisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynopsisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				116CDCA6286B24E70035AF34 /* Framezilla.xcframework in Frameworks */,
+				116E83532872D1CA00B6E457 /* Realm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +250,7 @@
 		116CDCA3286B23EE0035AF34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				116E83522872D1CA00B6E457 /* Realm.xcframework */,
 				116CDCA4286B23EE0035AF34 /* Framezilla.xcframework */,
 			);
 			name = Frameworks;
@@ -332,6 +340,7 @@
 		116CDCFC286D9D8E0035AF34 /* AnimeDetails */ = {
 			isa = PBXGroup;
 			children = (
+				116E83552872D3A300B6E457 /* Views */,
 				116CDCFD286DBB780035AF34 /* AnimeDetailsModule.swift */,
 				116CDCFF286DBB8A0035AF34 /* AnimeDetailsViewController.swift */,
 				116CDD01286DBB960035AF34 /* AnimeDetailsState.swift */,
@@ -345,6 +354,14 @@
 			children = (
 			);
 			path = Bookmarks;
+			sourceTree = "<group>";
+		};
+		116E83552872D3A300B6E457 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				116E83562872D3C700B6E457 /* SynopsisViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +486,7 @@
 				116CDCB2286B26160035AF34 /* Strings.swift in Sources */,
 				116CDCD8286C50150035AF34 /* TopListViewCell.swift in Sources */,
 				116CDCB1286B26160035AF34 /* Assets.swift in Sources */,
+				116E83572872D3C700B6E457 /* SynopsisViewController.swift in Sources */,
 				116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */,
 				116CDD00286DBB8A0035AF34 /* AnimeDetailsViewController.swift in Sources */,
 				116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */,

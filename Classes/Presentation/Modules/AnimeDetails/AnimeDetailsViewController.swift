@@ -95,6 +95,14 @@ final class AnimeDetailsViewController: UIViewController {
         return view
     }()
 
+    private lazy var synopsisButton: UIButton = {
+        let view = UIButton(type: .custom)
+        view.setTitle("Show all text", for: .normal)
+        view.setTitleColor(.main3A, for: .normal)
+        view.addTarget(self, action: #selector(synopsisButtonTapped), for: .touchUpInside)
+        return view
+    }()
+
     // MARK: - Lifecycle
 
     init(presenter: AnimeDetailsPresenter) {
@@ -173,9 +181,15 @@ final class AnimeDetailsViewController: UIViewController {
 
         synopsisLabel.configureFrame { maker in
             maker.height(120)
-                .top(to: genresLabel.nui_bottom, inset: 10)
+                .top(to: genresLabel.nui_bottom, inset: 5)
                 .left(inset: 30)
                 .right(inset: 30)
+        }
+
+        synopsisButton.configureFrame { maker in
+            maker.sizeToFit()
+                .top(to: synopsisLabel.nui_bottom, inset: 3)
+                .left(to: synopsisLabel.nui_left)
         }
     }
 
@@ -183,6 +197,10 @@ final class AnimeDetailsViewController: UIViewController {
 
     @objc private func bookmarkButtonTapped() {
         presenter.addToFavorites()
+    }
+
+    @objc private func synopsisButtonTapped() {
+        presenter.presentSynopsisViewController()
     }
 
     // MARK: - Private
@@ -199,6 +217,7 @@ final class AnimeDetailsViewController: UIViewController {
         backdropView.addSubview(ratingLabel)
         backdropView.addSubview(genresLabel)
         backdropView.addSubview(synopsisLabel)
+        backdropView.addSubview(synopsisButton)
         view.addSubview(bookmarkButton)
 
         scrollView.delegate = self

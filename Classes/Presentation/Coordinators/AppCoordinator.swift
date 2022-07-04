@@ -70,6 +70,10 @@ extension AppCoordinator: TopListModuleOutput {
 
 extension AppCoordinator: AnimeDetailsModuleOutput {
 
+    func animeDetailsSynopsisTappedEventTriggered(synopsis: String) {
+        rootViewController.pushViewController(SynopsisViewController(synopsis: synopsis), animated: true)
+    }
+
     func moviesTappedEventTriggered(_ moduleInput: AnimeDetailsModuleInput) {
 
     }
