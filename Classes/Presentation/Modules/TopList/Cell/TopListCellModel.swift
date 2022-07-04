@@ -13,6 +13,7 @@ final class TopListCellModel {
     var title: String
     var year: Int
     var rating: Double
+    var isFavorite: Bool = false
     var presenter: TopListPresenter
 
     init(animeInfo: AnimeInfo, presenter: TopListPresenter) {

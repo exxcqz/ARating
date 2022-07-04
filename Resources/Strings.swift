@@ -23,6 +23,10 @@ internal enum L10n {
   }
 
   internal enum Tabbar {
+    internal enum Bookmarks {
+      /// Bookmarks
+      internal static let title = L10n.tr("Localizable", "tabbar.bookmarks.title")
+    }
     internal enum Search {
       /// Search
       internal static let title = L10n.tr("Localizable", "tabbar.search.title")

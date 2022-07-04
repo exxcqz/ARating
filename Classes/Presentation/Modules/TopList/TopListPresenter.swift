@@ -49,7 +49,7 @@ final class TopListPresenter {
 
     func cellTappedEventTriggered(with indexPath: IndexPath) {
         let model = state.items[indexPath.row]
-        output?.topListCellTappedEventTriggered(self, animeInfo: model.animeInfo)
+        output?.topListCellTappedEventTriggered(self, animeModel: model)
     }
 }
 

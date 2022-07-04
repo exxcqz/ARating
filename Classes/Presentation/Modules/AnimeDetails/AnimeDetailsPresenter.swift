@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class AnimeDetailsPresenter {
     typealias Dependencies = HasNetworkService
@@ -22,20 +23,29 @@ final class AnimeDetailsPresenter {
     }
 
     func viewDidLoad() {
-        updateLabels()
+        updateGenresLabel()
         fetchImage()
     }
 
+    func addToFavorites() {
+        state.animeModel.isFavorite.toggle()
+        let generator = UISelectionFeedbackGenerator()
+        generator.selectionChanged()
+        update(force: false, animated: true)
+    }
+
+    // MARK: - Private
+
     private func fetchImage() {
-        let url = state.animeInfo.images.jpg.largeImageUrl
+        let url = state.animeModel.animeInfo.images.jpg.largeImageUrl
         dependencies.networkService.fetchImage(url: url) { image in
             self.state.image = image
             self.update(force: false, animated: true)
         }
     }
 
-    private func updateLabels() {
-        let genres = state.animeInfo.genres.map { $0.name }
+    private func updateGenresLabel() {
+        let genres = state.animeModel.animeInfo.genres.map { $0.name }
         state.genres = genres.joined(separator: ", ")
     }
 }

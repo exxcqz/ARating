@@ -24,6 +24,15 @@ final class AnimeDetailsViewController: UIViewController {
         return view
     }()
 
+    private lazy var bookmarkButton: UIButton = {
+        let view = UIButton(type: .custom)
+        view.backgroundColor = UIColor(r: 245, g: 245, b: 245)
+        view.setImage(Asset.icBookmark.image, for: .normal)
+        view.tintColor = .main1A
+        view.addTarget(self, action: #selector(bookmarkButtonTapped), for: .touchUpInside)
+        return view
+    }()
+
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
@@ -109,6 +118,13 @@ final class AnimeDetailsViewController: UIViewController {
                 .center()
         }
 
+        bookmarkButton.configureFrame { maker in
+            maker.size(width: 50, height: 50)
+                .right(inset: 25)
+                .bottom(to: view.nui_safeArea.bottom, inset: 10)
+                .cornerRadius(25)
+        }
+
         imageView.configureFrame { maker in
             maker.size(width: 190 * Layout.scaleFactorW / imageViewScale,
                        height: 250 * Layout.scaleFactorH / imageViewScale)
@@ -150,6 +166,8 @@ final class AnimeDetailsViewController: UIViewController {
         genresLabel.configureFrame { maker in
             maker.sizeToFit()
                 .top(to: ratingLabel.nui_bottom, inset: 7)
+                .left(inset: 30)
+                .right(inset: 30)
                 .centerX()
         }
 
@@ -159,6 +177,12 @@ final class AnimeDetailsViewController: UIViewController {
                 .left(inset: 30)
                 .right(inset: 30)
         }
+    }
+
+    // MARK: - Actions
+
+    @objc private func bookmarkButtonTapped() {
+        presenter.addToFavorites()
     }
 
     // MARK: - Private
@@ -175,6 +199,7 @@ final class AnimeDetailsViewController: UIViewController {
         backdropView.addSubview(ratingLabel)
         backdropView.addSubview(genresLabel)
         backdropView.addSubview(synopsisLabel)
+        view.addSubview(bookmarkButton)
 
         scrollView.delegate = self
         presenter.viewDidLoad()
@@ -183,6 +208,7 @@ final class AnimeDetailsViewController: UIViewController {
     private func viewsIsHidden(isHidden: Bool) {
         imageView.isHidden = isHidden
         scrollView.isHidden = isHidden
+        bookmarkButton.isHidden = isHidden
         if isHidden {
             indicatorView.startAnimating()
         }
@@ -203,6 +229,14 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
         genresLabel.text = state.genres
         synopsisLabel.text = state.synopsis
         viewsIsHidden(isHidden: false)
+
+        if state.animeModel.isFavorite {
+            bookmarkButton.tintColor = .main3A
+        }
+        else {
+            bookmarkButton.tintColor = .main1A
+        }
+
         view.setNeedsLayout()
         view.layoutIfNeeded()
     }
@@ -217,6 +251,5 @@ extension AnimeDetailsViewController: UIScrollViewDelegate {
         imageViewScale = scale
         view.setNeedsLayout()
         view.layoutIfNeeded()
-
     }
 }

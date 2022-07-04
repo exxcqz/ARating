@@ -39,14 +39,14 @@ final class TabBarViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         imageView.configureFrame { maker in
-            maker.sizeToFit()
+            maker.size(width: 30, height: 30)
                 .top(inset: 9)
                 .centerX()
         }
 
         titleLabel.configureFrame { maker in
             maker.sizeToFit()
-                .top(to: imageView.nui_bottom, inset: 3)
+                .top(to: imageView.nui_bottom, inset: 5)
                 .centerX(to: imageView.nui_centerX)
         }
     }

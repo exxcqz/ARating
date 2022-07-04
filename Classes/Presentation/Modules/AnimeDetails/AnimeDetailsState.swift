@@ -8,7 +8,7 @@
 import UIKit
 
 final class AnimeDetailsState {
-    var animeInfo: AnimeInfo
+    var animeModel: TopListCellModel
 
     var image: UIImage?
     var title: String
@@ -17,11 +17,11 @@ final class AnimeDetailsState {
     var synopsis: String
     var genres: String = ""
 
-    init(animeInfo: AnimeInfo) {
-        self.animeInfo = animeInfo
-        self.title = animeInfo.englishTitle ?? animeInfo.title ?? ""
-        self.year = animeInfo.year ?? 0
-        self.rating = animeInfo.score ?? 0
-        self.synopsis = animeInfo.synopsis ?? ""
+    init(animeModel: TopListCellModel) {
+        self.animeModel = animeModel
+        self.title = animeModel.title
+        self.year = animeModel.year
+        self.rating = animeModel.rating
+        self.synopsis = animeModel.animeInfo.synopsis ?? ""
     }
 }

@@ -28,8 +28,9 @@ final class AppCoordinator: BaseCoordinator<UINavigationController> {
         let moviesModule = createMoviesModule()
 
         let tabBarItems: [TabBarCellModel] = [
-            TabBarCellModel(viewController: moviesModule.viewController, image: Asset.icMovies.image, title: L10n.Tabbar.Top.title),
-            TabBarCellModel(viewController: UIViewController(), image: Asset.icSearch.image, title: L10n.Tabbar.Search.title)
+            TabBarCellModel(viewController: moviesModule.viewController, image: Asset.icTop.image, title: L10n.Tabbar.Top.title),
+            TabBarCellModel(viewController: UIViewController(), image: Asset.icSearch.image, title: L10n.Tabbar.Search.title),
+            TabBarCellModel(viewController: UIViewController(), image: Asset.icBookmark.image, title: L10n.Tabbar.Bookmarks.title)
         ]
         let tabBarModule = TabBarModule(state: TabBarState(items: tabBarItems))
         tabBarModule.output = self
@@ -42,8 +43,8 @@ final class AppCoordinator: BaseCoordinator<UINavigationController> {
         return module
     }
 
-    private func createAnimeDetailsModule(animeInfo: AnimeInfo) -> AnimeDetailsModule {
-        let state = AnimeDetailsState(animeInfo: animeInfo)
+    private func createAnimeDetailsModule(animeModel: TopListCellModel) -> AnimeDetailsModule {
+        let state = AnimeDetailsState(animeModel: animeModel)
         let module = AnimeDetailsModule(state: state)
         module.output = self
         return module
@@ -61,8 +62,8 @@ extension AppCoordinator: TabBarModuleOutput {
 
 extension AppCoordinator: TopListModuleOutput {
 
-    func topListCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeInfo: AnimeInfo) {
-        let animeDetailsModule = createAnimeDetailsModule(animeInfo: animeInfo)
+    func topListCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeModel: TopListCellModel) {
+        let animeDetailsModule = createAnimeDetailsModule(animeModel: animeModel)
         rootViewController.pushViewController(animeDetailsModule.viewController, animated: false)
     }
 }

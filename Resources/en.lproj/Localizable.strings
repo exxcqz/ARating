@@ -4,6 +4,7 @@
 
 "tabbar.top.title" = "Top";
 "tabbar.search.title" = "Search";
+"tabbar.bookmarks.title" = "Bookmarks";
 
 "movies.now.title" = "Now";
 "movies.top.title" = "Top";
