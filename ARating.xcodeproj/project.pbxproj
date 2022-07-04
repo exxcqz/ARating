@@ -219,6 +219,7 @@
 		116CDC81286B1F3A0035AF34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				116E83512872BB5300B6E457 /* Bookmarks */,
 				116CDCFC286D9D8E0035AF34 /* AnimeDetails */,
 				116CDCB6286C05110035AF34 /* TabBar */,
 				116CDCB3286B2FB70035AF34 /* TopList */,
@@ -337,6 +338,13 @@
 				116CDD03286DBBAF0035AF34 /* AnimeDetailsPresenter.swift */,
 			);
 			path = AnimeDetails;
+			sourceTree = "<group>";
+		};
+		116E83512872BB5300B6E457 /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bookmarks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

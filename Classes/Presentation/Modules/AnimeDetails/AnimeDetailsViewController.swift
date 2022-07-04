@@ -124,7 +124,7 @@ final class AnimeDetailsViewController: UIViewController {
                 .bottom(to: view.nui_safeArea.bottom, inset: 10)
                 .cornerRadius(25)
         }
-
+        
         imageView.configureFrame { maker in
             maker.size(width: 190 * Layout.scaleFactorW / imageViewScale,
                        height: 250 * Layout.scaleFactorH / imageViewScale)
