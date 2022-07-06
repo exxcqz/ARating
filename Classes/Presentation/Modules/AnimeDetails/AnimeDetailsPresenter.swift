@@ -38,6 +38,16 @@ final class AnimeDetailsPresenter {
         output?.animeDetailsSynopsisTappedEventTriggered(synopsis: state.synopsis)
     }
 
+    func showNavigationBar(isHidden: Bool) {
+        state.isNavigationBarHidden = isHidden
+        update(force: false, animated: true)
+    }
+
+    func updateImageViewScale(scale: CGFloat) {
+        state.imageViewScale = scale
+        update(force: false, animated: true)
+    }
+
     // MARK: - Private
 
     private func fetchImage() {

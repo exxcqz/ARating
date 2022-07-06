@@ -15,12 +15,23 @@ protocol AnimeDetailsViewInput {
 final class AnimeDetailsViewController: UIViewController {
     var presenter: AnimeDetailsPresenter
 
-    private var imageViewScale: CGFloat = 1
+    private var imageViewScale: CGFloat {
+        didSet {
+            view.setNeedsLayout()
+            view.layoutIfNeeded()
+        }
+    }
 
     // MARK: - Subviews
 
     private lazy var indicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
+        return view
+    }()
+
+    private lazy var navigationBackgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
         return view
     }()
 
@@ -107,6 +118,7 @@ final class AnimeDetailsViewController: UIViewController {
 
     init(presenter: AnimeDetailsPresenter) {
         self.presenter = presenter
+        self.imageViewScale = presenter.state.imageViewScale
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -124,6 +136,11 @@ final class AnimeDetailsViewController: UIViewController {
         indicatorView.configureFrame { maker in
             maker.size(width: 35, height: 35)
                 .center()
+        }
+
+        navigationBackgroundView.configureFrame { maker in
+            maker.height(view.safeAreaInsets.top)
+                .top().left().right()
         }
 
         bookmarkButton.configureFrame { maker in
@@ -207,6 +224,7 @@ final class AnimeDetailsViewController: UIViewController {
 
     private func setup() {
         view.backgroundColor = UIColor(r: 255, g: 255, b: 255, alpha: 0.8)
+        navigationController?.navigationBar.backItem?.title = ""
         viewsIsHidden(isHidden: true)
         view.addSubview(indicatorView)
         view.addSubview(imageView)
@@ -219,6 +237,7 @@ final class AnimeDetailsViewController: UIViewController {
         backdropView.addSubview(synopsisLabel)
         backdropView.addSubview(synopsisButton)
         view.addSubview(bookmarkButton)
+        view.addSubview(navigationBackgroundView)
 
         scrollView.delegate = self
         presenter.viewDidLoad()
@@ -249,6 +268,8 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
         synopsisLabel.text = state.synopsis
         viewsIsHidden(isHidden: false)
 
+        imageViewScale = state.imageViewScale
+
         if state.animeModel.isFavorite {
             bookmarkButton.tintColor = .main3A
         }
@@ -256,19 +277,38 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
             bookmarkButton.tintColor = .main1A
         }
 
+        if state.isNavigationBarHidden {
+            navigationItem.title = ""
+            navigationBackgroundView.backgroundColor = .clear
+            UIView.animate(withDuration: 0.3) {
+                self.titleLabel.alpha = 1
+            }
+        }
+        else {
+            navigationItem.title = presenter.state.title
+            navigationBackgroundView.backgroundColor = .white
+            UIView.animate(withDuration: 0.3) {
+                self.titleLabel.alpha = 0
+            }
+        }
         view.setNeedsLayout()
         view.layoutIfNeeded()
     }
 }
 
-// MARK: - TabBarViewInput
+// MARK: - UIScrollViewDelegate
 
 extension AnimeDetailsViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scale = abs(scrollView.contentInset.top / scrollView.contentOffset.y)
-        imageViewScale = scale
-        view.setNeedsLayout()
-        view.layoutIfNeeded()
+        presenter.updateImageViewScale(scale: scale)
+        
+        if scrollView.contentOffset.y > -view.safeAreaInsets.top {
+            presenter.showNavigationBar(isHidden: false)
+        }
+        else {
+            presenter.showNavigationBar(isHidden: true)
+        }
     }
 }

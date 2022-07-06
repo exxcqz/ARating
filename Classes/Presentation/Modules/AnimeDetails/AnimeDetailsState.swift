@@ -16,6 +16,8 @@ final class AnimeDetailsState {
     var rating: Double
     var synopsis: String
     var genres: String = ""
+    var imageViewScale: CGFloat = 1
+    var isNavigationBarHidden: Bool = true
 
     init(animeModel: TopListCellModel) {
         self.animeModel = animeModel
