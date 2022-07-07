@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112648D92876962E00EF9D67 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116E83522872D1CA00B6E457 /* Realm.xcframework */; };
+		112648DA2876962E00EF9D67 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 116E83522872D1CA00B6E457 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		112648DD2876967D00EF9D67 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648DC2876967D00EF9D67 /* DatabaseService.swift */; };
+		112648DF2876968D00EF9D67 /* DatabaseServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648DE2876968D00EF9D67 /* DatabaseServiceImp.swift */; };
+		112648E12876973E00EF9D67 /* AnimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648E02876973E00EF9D67 /* AnimeModel.swift */; };
+		112648E32876AA9E00EF9D67 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 112648E22876AA9E00EF9D67 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		112648E52876F30B00EF9D67 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648E42876F30B00EF9D67 /* BookmarksViewController.swift */; };
+		112648E72876F31800EF9D67 /* BookmarksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648E62876F31800EF9D67 /* BookmarksPresenter.swift */; };
+		112648E92876F32800EF9D67 /* BookmarksModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648E82876F32800EF9D67 /* BookmarksModule.swift */; };
+		112648EB2876F33500EF9D67 /* BookmarksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648EA2876F33500EF9D67 /* BookmarksState.swift */; };
+		112648EE2876F5BB00EF9D67 /* BookmarkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648ED2876F5BB00EF9D67 /* BookmarkViewCell.swift */; };
+		112648F02876F5EB00EF9D67 /* BookmarkCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648EF2876F5EB00EF9D67 /* BookmarkCellModel.swift */; };
 		116CDC69286B1DEF0035AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDC68286B1DEF0035AF34 /* AppDelegate.swift */; };
 		116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDC6A286B1DEF0035AF34 /* SceneDelegate.swift */; };
 		116CDC72286B1DF40035AF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116CDC71286B1DF40035AF34 /* Assets.xcassets */; };
@@ -54,8 +66,6 @@
 		116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD01286DBB960035AF34 /* AnimeDetailsState.swift */; };
 		116CDD04286DBBAF0035AF34 /* AnimeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD03286DBBAF0035AF34 /* AnimeDetailsPresenter.swift */; };
 		116CDD06286EC66E0035AF34 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD05286EC66E0035AF34 /* Layout.swift */; };
-		116E83532872D1CA00B6E457 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116E83522872D1CA00B6E457 /* Realm.xcframework */; };
-		116E83542872D1CA00B6E457 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 116E83522872D1CA00B6E457 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		116E83572872D3C700B6E457 /* SynopsisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E83562872D3C700B6E457 /* SynopsisViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +77,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				116CDCA7286B24E70035AF34 /* Framezilla.xcframework in Embed Frameworks */,
-				116E83542872D1CA00B6E457 /* Realm.xcframework in Embed Frameworks */,
+				112648DA2876962E00EF9D67 /* Realm.xcframework in Embed Frameworks */,
+				112648E32876AA9E00EF9D67 /* RealmSwift.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +86,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		112648D6287695EE00EF9D67 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
+		112648DC2876967D00EF9D67 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		112648DE2876968D00EF9D67 /* DatabaseServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceImp.swift; sourceTree = "<group>"; };
+		112648E02876973E00EF9D67 /* AnimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeModel.swift; sourceTree = "<group>"; };
+		112648E22876AA9E00EF9D67 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
+		112648E42876F30B00EF9D67 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		112648E62876F31800EF9D67 /* BookmarksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksPresenter.swift; sourceTree = "<group>"; };
+		112648E82876F32800EF9D67 /* BookmarksModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModule.swift; sourceTree = "<group>"; };
+		112648EA2876F33500EF9D67 /* BookmarksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksState.swift; sourceTree = "<group>"; };
+		112648ED2876F5BB00EF9D67 /* BookmarkViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewCell.swift; sourceTree = "<group>"; };
+		112648EF2876F5EB00EF9D67 /* BookmarkCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellModel.swift; sourceTree = "<group>"; };
 		116CDC65286B1DEF0035AF34 /* ARating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		116CDC68286B1DEF0035AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116CDC6A286B1DEF0035AF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,16 +155,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				116CDCA6286B24E70035AF34 /* Framezilla.xcframework in Frameworks */,
-				116E83532872D1CA00B6E457 /* Realm.xcframework in Frameworks */,
+				112648D92876962E00EF9D67 /* Realm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112648DB2876966700EF9D67 /* DatabaseService */ = {
+			isa = PBXGroup;
+			children = (
+				112648DC2876967D00EF9D67 /* DatabaseService.swift */,
+				112648DE2876968D00EF9D67 /* DatabaseServiceImp.swift */,
+			);
+			path = DatabaseService;
+			sourceTree = "<group>";
+		};
+		112648EC2876F36000EF9D67 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				112648ED2876F5BB00EF9D67 /* BookmarkViewCell.swift */,
+				112648EF2876F5EB00EF9D67 /* BookmarkCellModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		116CDC5C286B1DEF0035AF34 = {
 			isa = PBXGroup;
 			children = (
+				112648E22876AA9E00EF9D67 /* RealmSwift.xcframework */,
 				116CDC7D286B1F0A0035AF34 /* Resources */,
 				116CDC7C286B1F050035AF34 /* Classes */,
 				116CDC67286B1DEF0035AF34 /* ARating */,
@@ -214,6 +255,7 @@
 		116CDC80286B1F250035AF34 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				112648DB2876966700EF9D67 /* DatabaseService */,
 				116CDCE6286C705D0035AF34 /* NetworkService */,
 				116CDCE2286C6A870035AF34 /* NetworkType.swift */,
 				116CDCE4286C70230035AF34 /* NetworkRequest.swift */,
@@ -250,6 +292,7 @@
 		116CDCA3286B23EE0035AF34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				112648D6287695EE00EF9D67 /* RealmSwift.xcframework */,
 				116E83522872D1CA00B6E457 /* Realm.xcframework */,
 				116CDCA4286B23EE0035AF34 /* Framezilla.xcframework */,
 			);
@@ -333,6 +376,7 @@
 				116CDCEA286C73340035AF34 /* DataResult.swift */,
 				116CDCEC286C74760035AF34 /* PageInfo.swift */,
 				116CDCEE286C76B40035AF34 /* AnimeInfo.swift */,
+				112648E02876973E00EF9D67 /* AnimeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +396,11 @@
 		116E83512872BB5300B6E457 /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
+				112648EC2876F36000EF9D67 /* Cell */,
+				112648E42876F30B00EF9D67 /* BookmarksViewController.swift */,
+				112648E62876F31800EF9D67 /* BookmarksPresenter.swift */,
+				112648E82876F32800EF9D67 /* BookmarksModule.swift */,
+				112648EA2876F33500EF9D67 /* BookmarksState.swift */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -465,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112648E52876F30B00EF9D67 /* BookmarksViewController.swift in Sources */,
 				116CDCF3286D86D00035AF34 /* TopListIndicatorViewCell.swift in Sources */,
 				116CDCEB286C73340035AF34 /* DataResult.swift in Sources */,
 				116CDCE3286C6A870035AF34 /* NetworkType.swift in Sources */,
@@ -477,22 +527,29 @@
 				116CDCB8286C054B0035AF34 /* TopListModule.swift in Sources */,
 				116CDCE0286C69650035AF34 /* ServicesFactory.swift in Sources */,
 				116CDCFE286DBB780035AF34 /* AnimeDetailsModule.swift in Sources */,
+				112648F02876F5EB00EF9D67 /* BookmarkCellModel.swift in Sources */,
 				116CDCC3286C0B390035AF34 /* TabBarPresenter.swift in Sources */,
+				112648DF2876968D00EF9D67 /* DatabaseServiceImp.swift in Sources */,
 				116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */,
 				116CDCCE286C1CDC0035AF34 /* TabBarViewCell.swift in Sources */,
 				116CDCCB286C0F200035AF34 /* AppCoordinator.swift in Sources */,
 				116CDCBE286C05FF0035AF34 /* TopListPresenter.swift in Sources */,
 				116CDC69286B1DEF0035AF34 /* AppDelegate.swift in Sources */,
 				116CDCB2286B26160035AF34 /* Strings.swift in Sources */,
+				112648E92876F32800EF9D67 /* BookmarksModule.swift in Sources */,
 				116CDCD8286C50150035AF34 /* TopListViewCell.swift in Sources */,
 				116CDCB1286B26160035AF34 /* Assets.swift in Sources */,
+				112648DD2876967D00EF9D67 /* DatabaseService.swift in Sources */,
+				112648E12876973E00EF9D67 /* AnimeModel.swift in Sources */,
 				116E83572872D3C700B6E457 /* SynopsisViewController.swift in Sources */,
 				116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */,
 				116CDD00286DBB8A0035AF34 /* AnimeDetailsViewController.swift in Sources */,
 				116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */,
 				116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */,
 				116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */,
+				112648EB2876F33500EF9D67 /* BookmarksState.swift in Sources */,
 				116CDD04286DBBAF0035AF34 /* AnimeDetailsPresenter.swift in Sources */,
+				112648EE2876F5BB00EF9D67 /* BookmarkViewCell.swift in Sources */,
 				116CDCED286C74760035AF34 /* PageInfo.swift in Sources */,
 				116CDCDA286C53C80035AF34 /* TopListCellModel.swift in Sources */,
 				116CDCC4286C0B390035AF34 /* TabBarModule.swift in Sources */,
@@ -501,6 +558,7 @@
 				116CDD06286EC66E0035AF34 /* Layout.swift in Sources */,
 				116CDCBC286C05E30035AF34 /* TopListViewController.swift in Sources */,
 				116CDCE5286C70230035AF34 /* NetworkRequest.swift in Sources */,
+				112648E72876F31800EF9D67 /* BookmarksPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

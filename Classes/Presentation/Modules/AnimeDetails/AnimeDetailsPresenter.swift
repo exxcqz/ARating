@@ -7,9 +7,10 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 final class AnimeDetailsPresenter {
-    typealias Dependencies = HasNetworkService
+    typealias Dependencies = HasNetworkService & HasDatabaseService
     
     var view: AnimeDetailsViewInput?
     var output: AnimeDetailsModuleOutput?
@@ -23,14 +24,18 @@ final class AnimeDetailsPresenter {
     }
 
     func viewDidLoad() {
-        updateGenresLabel()
+        updateState()
         fetchImage()
     }
 
     func addToFavorites() {
-        state.animeModel.isFavorite.toggle()
         let generator = UISelectionFeedbackGenerator()
         generator.selectionChanged()
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+        let databaseModel = AnimeModel(animeInfo: state.animeModel.animeInfo, genres: state.genres)
+        dependencies.databaseService.addObject(object: databaseModel)
+
+        state.animeModel.isFavorite = dependencies.databaseService.objectIsContained(id: state.animeModel.animeInfo.id)
         update(force: false, animated: true)
     }
 
@@ -58,9 +63,11 @@ final class AnimeDetailsPresenter {
         }
     }
 
-    private func updateGenresLabel() {
+    private func updateState() {
         let genres = state.animeModel.animeInfo.genres.map { $0.name }
         state.genres = genres.joined(separator: ", ")
+        let id = state.animeModel.animeInfo.id
+        state.animeModel.isFavorite = dependencies.databaseService.objectIsContained(id: id)
     }
 }
 

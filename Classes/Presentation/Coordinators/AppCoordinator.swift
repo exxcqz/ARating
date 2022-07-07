@@ -26,11 +26,12 @@ final class AppCoordinator: BaseCoordinator<UINavigationController> {
 
     private func openTabBarModule() {
         let moviesModule = createMoviesModule()
+        let bookmarksModule = createBookmarksModule()
 
         let tabBarItems: [TabBarCellModel] = [
             TabBarCellModel(viewController: moviesModule.viewController, image: Asset.icTop.image, title: L10n.Tabbar.Top.title),
             TabBarCellModel(viewController: UIViewController(), image: Asset.icSearch.image, title: L10n.Tabbar.Search.title),
-            TabBarCellModel(viewController: UIViewController(), image: Asset.icBookmark.image, title: L10n.Tabbar.Bookmarks.title)
+            TabBarCellModel(viewController: bookmarksModule.viewController, image: Asset.icBookmark.image, title: L10n.Tabbar.Bookmarks.title)
         ]
         let tabBarModule = TabBarModule(state: TabBarState(items: tabBarItems))
         tabBarModule.output = self
@@ -39,6 +40,12 @@ final class AppCoordinator: BaseCoordinator<UINavigationController> {
 
     private func createMoviesModule() -> TopListModule {
         let module = TopListModule()
+        module.output = self
+        return module
+    }
+
+    private func createBookmarksModule() -> BookmarksModule {
+        let module = BookmarksModule()
         module.output = self
         return module
     }
@@ -75,6 +82,13 @@ extension AppCoordinator: AnimeDetailsModuleOutput {
     }
 
     func moviesTappedEventTriggered(_ moduleInput: AnimeDetailsModuleInput) {
+
+    }
+}
+
+extension AppCoordinator: BookmarksModuleOutput {
+
+    func bookmarksCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeModel: AnimeModel) {
 
     }
 }

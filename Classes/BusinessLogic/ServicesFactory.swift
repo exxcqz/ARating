@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias ServicesAlias = HasNetworkService
+typealias ServicesAlias = HasNetworkService & HasDatabaseService
 
 var Services: ServicesAlias { // swiftlint:disable:this variable_name
     return ServicesFactory()
@@ -15,6 +15,7 @@ var Services: ServicesAlias { // swiftlint:disable:this variable_name
 
 final class ServicesFactory: ServicesAlias {
     lazy var networkService: NetworkService = NetworkServiceImp()
+    lazy var databaseService: DatabaseService = DatabaseServiceImp()
 }
 
 // MARK: Singletons
