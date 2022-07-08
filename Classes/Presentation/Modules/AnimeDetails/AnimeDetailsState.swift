@@ -8,7 +8,7 @@
 import UIKit
 
 final class AnimeDetailsState {
-    var animeInfo: AnimeInfo
+    var animeModel: AnimeModel
 
     var image: UIImage?
     var title: String
@@ -20,11 +20,11 @@ final class AnimeDetailsState {
     var isNavigationBarHidden: Bool = true
     var isFavorite: Bool = false
 
-    init(animeInfo: AnimeInfo) {
-        self.animeInfo = animeInfo
-        self.title = animeInfo.englishTitle ?? animeInfo.title ?? ""
-        self.year = animeInfo.year ?? 0
-        self.rating = animeInfo.score ?? 0
-        self.synopsis = animeInfo.synopsis ?? ""
+    init(animeModel: AnimeModel) {
+        self.animeModel = animeModel
+        self.title = animeModel.englishTitle ?? animeModel.title ?? ""
+        self.year = animeModel.year ?? 0
+        self.rating = animeModel.score ?? 0
+        self.synopsis = animeModel.synopsis ?? ""
     }
 }

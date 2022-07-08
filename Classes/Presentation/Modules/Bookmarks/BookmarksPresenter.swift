@@ -28,26 +28,14 @@ final class BookmarksPresenter {
     }
 
     func cellTappedEventTriggered(with indexPath: IndexPath) {
-        let id = state.items[indexPath.row].animeModel.id
-        fetchAnimeInfo(with: id)
+        let animeModel = state.items[indexPath.row].animeModel
+        output?.bookmarksCellTappedEventTriggered(self, animeModel: animeModel)
     }
 
     private func fetchItems() {
         let animeModels = dependencies.databaseService.getAllObjects()
         state.items = animeModels.map { BookmarkCellModel(animeModel: $0, presenter: self) }
         update(force: false, animated: true)
-    }
-
-    private func fetchAnimeInfo(with id: Int) {
-        dependencies.networkService.fetchAnimeById(id: id) { result, error in
-            if let _ = error {
-                return
-            }
-
-            if let result = result {
-                self.output?.bookmarksCellTappedEventTriggered(self, animeInfo: result.data)
-            }
-        }
     }
 }
 

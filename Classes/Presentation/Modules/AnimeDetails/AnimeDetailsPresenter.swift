@@ -31,11 +31,9 @@ final class AnimeDetailsPresenter {
     func addToFavorites() {
         let generator = UISelectionFeedbackGenerator()
         generator.selectionChanged()
-        print(Realm.Configuration.defaultConfiguration.fileURL)
-        let databaseModel = AnimeModel(animeInfo: state.animeInfo)
-        dependencies.databaseService.addObject(object: databaseModel)
+        dependencies.databaseService.addObject(object: state.animeModel)
 
-        state.isFavorite = dependencies.databaseService.objectIsContained(id: state.animeInfo.id)
+        state.isFavorite = dependencies.databaseService.objectIsContained(id: state.animeModel.id)
         update(force: false, animated: true)
     }
 
@@ -56,7 +54,7 @@ final class AnimeDetailsPresenter {
     // MARK: - Private
 
     private func fetchImage() {
-        let url = state.animeInfo.images.jpg.largeImageUrl
+        let url = state.animeModel.largeImageUrl
         dependencies.networkService.fetchImage(url: url) { image in
             self.state.image = image
             self.update(force: false, animated: true)
@@ -64,9 +62,9 @@ final class AnimeDetailsPresenter {
     }
 
     private func updateState() {
-        let genres = state.animeInfo.genres.map { $0.name }
+        let genres = state.animeModel.genres
         state.genres = genres.joined(separator: ", ")
-        let id = state.animeInfo.id
+        let id = state.animeModel.id
         state.isFavorite = dependencies.databaseService.objectIsContained(id: id)
     }
 }
