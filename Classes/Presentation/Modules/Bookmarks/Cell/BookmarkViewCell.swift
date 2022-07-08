@@ -88,7 +88,7 @@ final class BookmarkViewCell: UICollectionViewCell {
 
         titleLabel.configureFrame { maker in
             maker.sizeThatFits(size: .init(width: bounds.width - imageView.frame.height - 20,
-                                           height: 40 * Layout.scaleFactorW))
+                                           height: 37 * Layout.scaleFactorW))
                 .top(inset: 5)
                 .left(to: imageView.nui_right, inset: 5)
                 .right(inset: 10)
