@@ -23,11 +23,8 @@ final class BookmarkViewCell: UICollectionViewCell {
     lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.main1B.cgColor,
-                                UIColor.main1A.cgColor]
-        gradientLayer.locations = [0.3, 1.0]
-        view.layer.insertSublayer(gradientLayer, at: 0)
+        view.layer.cornerRadius = 6
+        view.clipsToBounds = true
         return view
     }()
 
@@ -40,15 +37,15 @@ final class BookmarkViewCell: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.font = .proDisplayBoldFont(ofSize: 12)
-        view.textColor = .main2A
+        view.font = .proDisplayMediumFont(ofSize: 14 * Layout.scaleFactorW)
+        view.textColor = .main1A
         return view
     }()
 
     lazy var yearLabel: UILabel = {
         let view = UILabel()
         view.font = .proDisplayRegularFont(ofSize: 12)
-        view.textColor = .main2A
+        view.textColor = .main1A
         view.alpha = 0.8
         return view
     }()
@@ -74,40 +71,33 @@ final class BookmarkViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        containerView.configureFrame { maker in
-            maker.top()
-                .left()
-                .right()
-                .bottom()
-        }
+        containerView.frame = bounds
 
-        imageView.frame = containerView.bounds
-
-        imageView.layer.sublayers?.configureFrames { maker in
-            maker.height(bounds.height / 3.9)
-                .left()
-                .right()
-                .bottom()
+        imageView.configureFrame { maker in
+            maker.size(width: bounds.height - 10, height: bounds.height - 10)
+                .left(inset: 5)
+                .centerY()
         }
 
         ratingBackdropView.configureFrame { maker in
             maker.size(width: 35, height: 19)
-                .top(to: containerView.nui_top, inset: 10)
-                .right(to: containerView.nui_right, inset: 10)
+                .top(to: imageView.nui_top, inset: 5)
+                .right(to: imageView.nui_right, inset: 5)
                 .cornerRadius(3)
         }
 
         titleLabel.configureFrame { maker in
-            maker.sizeThatFits(size: .init(width: bounds.width - 20, height: 30))
-                .left(to: containerView.nui_left, inset: 10)
-                .right(to: containerView.nui_right,inset: 10)
-                .bottom(to: containerView.nui_bottom, inset: 9)
+            maker.sizeThatFits(size: .init(width: bounds.width - imageView.frame.height - 20,
+                                           height: 40 * Layout.scaleFactorW))
+                .top(inset: 5)
+                .left(to: imageView.nui_right, inset: 5)
+                .right(inset: 10)
         }
 
         yearLabel.configureFrame { maker in
             maker.sizeToFit()
-                .left(to: containerView.nui_left, inset: 10)
-                .bottom(to: titleLabel.nui_top, inset: 3)
+                .top(to: titleLabel.nui_bottom, inset: 5)
+                .left(to: titleLabel.nui_left)
         }
 
         ratingLabel.configureFrame { maker in

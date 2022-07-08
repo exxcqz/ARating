@@ -21,8 +21,8 @@ final class BookmarksViewController: UIViewController {
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 20
-        layout.minimumInteritemSpacing = 20
+        layout.minimumLineSpacing = 7
+        layout.minimumInteritemSpacing = 7
         layout.scrollDirection = .vertical
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(BookmarkViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -126,8 +126,7 @@ extension BookmarksViewController: UICollectionViewDataSource {
 extension BookmarksViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (view.bounds.width - 60) / 2
-        return CGSize(width: width, height: 240 * Layout.scaleFactorH)
+        return CGSize(width: view.bounds.width - 30, height: 120 * Layout.scaleFactorH)
     }
 }
 
