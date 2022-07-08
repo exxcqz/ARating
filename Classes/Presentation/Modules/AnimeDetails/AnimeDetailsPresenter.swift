@@ -31,7 +31,8 @@ final class AnimeDetailsPresenter {
     func addToFavorites() {
         let generator = UISelectionFeedbackGenerator()
         generator.selectionChanged()
-        dependencies.databaseService.addObject(object: state.animeModel)
+        let animeModel = AnimeModel(value: state.animeModel)
+        dependencies.databaseService.addObject(object: animeModel)
 
         state.isFavorite = dependencies.databaseService.objectIsContained(id: state.animeModel.id)
         update(force: false, animated: true)
