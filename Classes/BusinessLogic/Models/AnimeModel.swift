@@ -24,14 +24,14 @@ class AnimeModel: Object {
     @Persisted var favorites: Int?
     @Persisted var synopsis: String?
     @Persisted var year: Int?
-    @Persisted var genres: String
+    @Persisted var genres = List<String>()
 
-    convenience init(animeInfo: AnimeInfo, genres: String) {
+    convenience init(animeInfo: AnimeInfo) {
         self.init()
         self.id = animeInfo.id
         self.imageUrl = animeInfo.images.jpg.imageUrl
         self.largeImageUrl = animeInfo.images.jpg.largeImageUrl
-        self.title = animeInfo.title
+        self.title = animeInfo.englishTitle ?? animeInfo.title ?? ""
         self.englishTitle = animeInfo.englishTitle
         self.type = animeInfo.type
         self.status = animeInfo.status
@@ -42,6 +42,7 @@ class AnimeModel: Object {
         self.favorites = animeInfo.favorites
         self.synopsis = animeInfo.synopsis
         self.year = animeInfo.year
-        self.genres = genres
+        let genresName = animeInfo.genres.map { $0.name }
+        genres.append(objectsIn: genresName)
     }
 }

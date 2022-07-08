@@ -8,7 +8,7 @@
 import UIKit
 
 final class AnimeDetailsState {
-    var animeModel: TopListCellModel
+    var animeInfo: AnimeInfo
 
     var image: UIImage?
     var title: String
@@ -18,12 +18,13 @@ final class AnimeDetailsState {
     var genres: String = ""
     var imageViewScale: CGFloat = 1
     var isNavigationBarHidden: Bool = true
+    var isFavorite: Bool = false
 
-    init(animeModel: TopListCellModel) {
-        self.animeModel = animeModel
-        self.title = animeModel.title
-        self.year = animeModel.year
-        self.rating = animeModel.rating
-        self.synopsis = animeModel.animeInfo.synopsis ?? ""
+    init(animeInfo: AnimeInfo) {
+        self.animeInfo = animeInfo
+        self.title = animeInfo.englishTitle ?? animeInfo.title ?? ""
+        self.year = animeInfo.year ?? 0
+        self.rating = animeInfo.score ?? 0
+        self.synopsis = animeInfo.synopsis ?? ""
     }
 }

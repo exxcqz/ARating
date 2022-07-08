@@ -50,8 +50,8 @@ final class AppCoordinator: BaseCoordinator<UINavigationController> {
         return module
     }
 
-    private func createAnimeDetailsModule(animeModel: TopListCellModel) -> AnimeDetailsModule {
-        let state = AnimeDetailsState(animeModel: animeModel)
+    private func createAnimeDetailsModule(animeInfo: AnimeInfo) -> AnimeDetailsModule {
+        let state = AnimeDetailsState(animeInfo: animeInfo)
         let module = AnimeDetailsModule(state: state)
         module.output = self
         return module
@@ -69,8 +69,8 @@ extension AppCoordinator: TabBarModuleOutput {
 
 extension AppCoordinator: TopListModuleOutput {
 
-    func topListCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeModel: TopListCellModel) {
-        let animeDetailsModule = createAnimeDetailsModule(animeModel: animeModel)
+    func topListCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeInfo: AnimeInfo) {
+        let animeDetailsModule = createAnimeDetailsModule(animeInfo: animeInfo)
         rootViewController.pushViewController(animeDetailsModule.viewController, animated: false)
     }
 }
@@ -88,7 +88,8 @@ extension AppCoordinator: AnimeDetailsModuleOutput {
 
 extension AppCoordinator: BookmarksModuleOutput {
 
-    func bookmarksCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeModel: AnimeModel) {
-
+    func bookmarksCellTappedEventTriggered(_ moduleInput: BookmarksModuleInput, animeInfo: AnimeInfo) {
+        let animeDetailsModule = createAnimeDetailsModule(animeInfo: animeInfo)
+        rootViewController.pushViewController(animeDetailsModule.viewController, animated: false)
     }
 }

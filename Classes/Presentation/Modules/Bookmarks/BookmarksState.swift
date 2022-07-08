@@ -9,5 +9,4 @@ import Foundation
 
 final class BookmarksState {
     var items: [BookmarkCellModel] = []
-    
 }

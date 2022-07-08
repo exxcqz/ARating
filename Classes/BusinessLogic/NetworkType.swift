@@ -10,6 +10,7 @@ import Foundation
 enum NetworkType {
     case getTopList(page: Int)
     case getSearch(query: String, page: Int)
+    case getAnimeByID(id: Int)
 
     var baseURL: URL {
         return URL(string: "https://api.jikan.moe/v4/")!
@@ -26,6 +27,8 @@ enum NetworkType {
             return path
         case .getTopList(let page):
             return "top/anime?page=\(page)"
+        case .getAnimeByID(let id):
+            return "anime/\(id)"
         }
     }
 
@@ -37,6 +40,9 @@ enum NetworkType {
             request.httpMethod = "GET"
             return request
         case .getTopList:
+            request.httpMethod = "GET"
+            return request
+        case .getAnimeByID:
             request.httpMethod = "GET"
             return request
         }

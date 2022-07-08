@@ -270,7 +270,7 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
 
         imageViewScale = state.imageViewScale
 
-        if state.animeModel.isFavorite {
+        if state.isFavorite {
             bookmarkButton.tintColor = .main3A
         }
         else {

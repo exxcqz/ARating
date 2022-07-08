@@ -8,7 +8,7 @@
 import Foundation
 
 protocol BookmarksModuleOutput {
-    func bookmarksCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeModel: AnimeModel)
+    func bookmarksCellTappedEventTriggered(_ moduleInput: BookmarksModuleInput, animeInfo: AnimeInfo)
 }
 
 protocol BookmarksModuleInput: AnyObject {
