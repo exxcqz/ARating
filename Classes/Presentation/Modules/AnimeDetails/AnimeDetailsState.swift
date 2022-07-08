@@ -21,7 +21,7 @@ final class AnimeDetailsState {
     var isFavorite: Bool = false
 
     init(animeModel: AnimeModel) {
-        self.animeModel = animeModel
+        self.animeModel = AnimeModel(value: animeModel)
         self.title = animeModel.englishTitle ?? animeModel.title ?? ""
         self.year = animeModel.year ?? 0
         self.rating = animeModel.score ?? 0
