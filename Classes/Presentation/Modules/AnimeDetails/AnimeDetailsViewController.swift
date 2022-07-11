@@ -220,11 +220,15 @@ final class AnimeDetailsViewController: UIViewController {
         presenter.presentSynopsisViewController()
     }
 
+    @objc private func backButtonTapped() {
+        presenter.backButtonTapped()
+    }
+
     // MARK: - Private
 
     private func setup() {
         view.backgroundColor = UIColor(r: 255, g: 255, b: 255, alpha: 0.8)
-        navigationController?.navigationBar.backItem?.title = ""
+        addCustomBackButton()
         viewsIsHidden(isHidden: true)
         view.addSubview(indicatorView)
         view.addSubview(imageView)
@@ -241,6 +245,15 @@ final class AnimeDetailsViewController: UIViewController {
 
         scrollView.delegate = self
         presenter.viewDidLoad()
+    }
+
+    private func addCustomBackButton() {
+        let backButton = UIBarButtonItem(image: Asset.icBack.image,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(backButtonTapped))
+        backButton.tintColor = .black
+        navigationItem.leftBarButtonItem = backButton
     }
 
     private func viewsIsHidden(isHidden: Bool) {

@@ -39,11 +39,15 @@ final class BookmarksPresenter {
     }
 }
 
-// MARK: - MoviesModuleInput
+// MARK: - BookmarksModuleInput
 
 extension BookmarksPresenter: BookmarksModuleInput {
 
     func update(force: Bool, animated: Bool) {
         view?.update(with: state, force: force, animated: animated)
+    }
+
+    func updateCollectionView() {
+        fetchItems()
     }
 }

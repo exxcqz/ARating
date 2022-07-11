@@ -8,8 +8,9 @@
 import Foundation
 
 protocol AnimeDetailsModuleOutput {
-    func moviesTappedEventTriggered(_ moduleInput: AnimeDetailsModuleInput)
+    func animeDetailsTappedEventTriggered(_ moduleInput: AnimeDetailsModuleInput)
     func animeDetailsSynopsisTappedEventTriggered(synopsis: String)
+    func animeDetailsBackButtonEventTriggered()
 }
 
 protocol AnimeDetailsModuleInput: AnyObject {

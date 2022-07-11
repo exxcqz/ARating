@@ -10,7 +10,7 @@ import UIKit
 final class AppCoordinator: BaseCoordinator<UINavigationController> {
 
     private var window: UIWindow?
-    private var tabBarModule: TabBarModule?
+    private var bookmarksModule: BookmarksModule?
 
     init() {
         let navigationController = UINavigationController()
@@ -27,6 +27,7 @@ final class AppCoordinator: BaseCoordinator<UINavigationController> {
     private func openTabBarModule() {
         let moviesModule = createMoviesModule()
         let bookmarksModule = createBookmarksModule()
+        self.bookmarksModule = bookmarksModule
 
         let tabBarItems: [TabBarCellModel] = [
             TabBarCellModel(viewController: moviesModule.viewController, image: Asset.icTop.image, title: L10n.Tabbar.Top.title),
@@ -78,12 +79,16 @@ extension AppCoordinator: TopListModuleOutput {
 
 extension AppCoordinator: AnimeDetailsModuleOutput {
 
+    func animeDetailsTappedEventTriggered(_ moduleInput: AnimeDetailsModuleInput) {
+    }
+
     func animeDetailsSynopsisTappedEventTriggered(synopsis: String) {
         rootViewController.pushViewController(SynopsisViewController(synopsis: synopsis), animated: true)
     }
 
-    func moviesTappedEventTriggered(_ moduleInput: AnimeDetailsModuleInput) {
-
+    func animeDetailsBackButtonEventTriggered() {
+        rootViewController.popViewController(animated: true)
+        bookmarksModule?.input.updateCollectionView()
     }
 }
 

@@ -52,6 +52,10 @@ final class AnimeDetailsPresenter {
         update(force: false, animated: true)
     }
 
+    func backButtonTapped() {
+        output?.animeDetailsBackButtonEventTriggered()
+    }
+
     // MARK: - Private
 
     private func fetchImage() {

@@ -14,6 +14,7 @@ protocol BookmarksModuleOutput {
 protocol BookmarksModuleInput: AnyObject {
     var state: BookmarksState { get }
     func update(force: Bool, animated: Bool)
+    func updateCollectionView()
 }
 
 final class BookmarksModule {
