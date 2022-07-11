@@ -45,6 +45,24 @@ final class NetworkServiceImp: NetworkService {
         }
     }
 
+    func fetchRecommendationsItems(id: Int, response: @escaping (AnimeList?, Error?) -> Void) {
+        let request = NetworkType.getRecommendationsList(id: id).request
+        NetworkRequest.shared.requestData(request: request) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let dataResult = try JSONDecoder().decode(AnimeList.self, from: data)
+                    response(dataResult, nil)
+                } catch let jsonError {
+                    print("Failed decode JSON", jsonError)
+                }
+            case .failure(let error):
+                print("Error fetch data: \(error.localizedDescription)")
+                response(nil, error)
+            }
+        }
+    }
+
     func fetchImage(url: String, completion: @escaping (UIImage) -> Void) {
         guard let url = URL(string: url) else { return }
         let task = URLSession.shared.dataTask(with: url) { data, _, _ in

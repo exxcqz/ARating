@@ -20,6 +20,7 @@
 		112648EE2876F5BB00EF9D67 /* BookmarkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648ED2876F5BB00EF9D67 /* BookmarkViewCell.swift */; };
 		112648F02876F5EB00EF9D67 /* BookmarkCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648EF2876F5EB00EF9D67 /* BookmarkCellModel.swift */; };
 		112648F22877E0BE00EF9D67 /* AnimeById.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648F12877E0BE00EF9D67 /* AnimeById.swift */; };
+		1126558B287BFD4C00894134 /* AnimeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126558A287BFD4C00894134 /* AnimeList.swift */; };
 		116CDC69286B1DEF0035AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDC68286B1DEF0035AF34 /* AppDelegate.swift */; };
 		116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDC6A286B1DEF0035AF34 /* SceneDelegate.swift */; };
 		116CDC72286B1DF40035AF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116CDC71286B1DF40035AF34 /* Assets.xcassets */; };
@@ -99,6 +100,7 @@
 		112648ED2876F5BB00EF9D67 /* BookmarkViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewCell.swift; sourceTree = "<group>"; };
 		112648EF2876F5EB00EF9D67 /* BookmarkCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellModel.swift; sourceTree = "<group>"; };
 		112648F12877E0BE00EF9D67 /* AnimeById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeById.swift; sourceTree = "<group>"; };
+		1126558A287BFD4C00894134 /* AnimeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeList.swift; sourceTree = "<group>"; };
 		116CDC65286B1DEF0035AF34 /* ARating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		116CDC68286B1DEF0035AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116CDC6A286B1DEF0035AF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				116CDCEE286C76B40035AF34 /* AnimeInfo.swift */,
 				112648E02876973E00EF9D67 /* AnimeModel.swift */,
 				112648F12877E0BE00EF9D67 /* AnimeById.swift */,
+				1126558A287BFD4C00894134 /* AnimeList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112648E52876F30B00EF9D67 /* BookmarksViewController.swift in Sources */,
+				1126558B287BFD4C00894134 /* AnimeList.swift in Sources */,
 				116CDCF3286D86D00035AF34 /* TopListIndicatorViewCell.swift in Sources */,
 				116CDCEB286C73340035AF34 /* DataResult.swift in Sources */,
 				116CDCE3286C6A870035AF34 /* NetworkType.swift in Sources */,
