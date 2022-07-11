@@ -224,11 +224,18 @@ final class AnimeDetailsViewController: UIViewController {
         presenter.backButtonTapped()
     }
 
+    @objc private func handleGesture(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .right {
+            presenter.backButtonTapped()
+        }
+    }
+
     // MARK: - Private
 
     private func setup() {
         view.backgroundColor = UIColor(r: 255, g: 255, b: 255, alpha: 0.8)
         addCustomBackButton()
+        addSwipeGestureRecognizer()
         viewsIsHidden(isHidden: true)
         view.addSubview(indicatorView)
         view.addSubview(imageView)
@@ -254,6 +261,12 @@ final class AnimeDetailsViewController: UIViewController {
                                          action: #selector(backButtonTapped))
         backButton.tintColor = .black
         navigationItem.leftBarButtonItem = backButton
+    }
+
+    private func addSwipeGestureRecognizer() {
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        gesture.direction = .right
+        self.view.addGestureRecognizer(gesture)
     }
 
     private func viewsIsHidden(isHidden: Bool) {
