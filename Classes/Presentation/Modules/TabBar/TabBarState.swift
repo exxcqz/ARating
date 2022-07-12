@@ -8,11 +8,10 @@
 import UIKit
 
 final class TabBarState {
-    var items: [TabBarCellModel]
-    var selectedCell: Int = 0
-    var embeddedView: UIView?
+    var items: [TabBarModel]
+    var viewControllers: [UINavigationController] = []
 
-    init(items: [TabBarCellModel]) {
+    init(items: [TabBarModel]) {
         self.items = items
     }
 }

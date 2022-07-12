@@ -319,18 +319,14 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
         }
 
         if state.isNavigationBarHidden {
-            UIView.animate(withDuration: 0.3) {
-                self.navigationItem.title = ""
-                self.navigationBackgroundView.backgroundColor = .clear
-                self.titleLabel.alpha = 1
-            }
+            navigationItem.title = ""
+            navigationBackgroundView.backgroundColor = .clear
+            titleLabel.alpha = 1
         }
         else {
-            UIView.animate(withDuration: 0.3) {
-                self.navigationItem.title = self.presenter.state.title
-                self.navigationBackgroundView.backgroundColor = .white
-                self.titleLabel.alpha = 0
-            }
+            navigationItem.title = self.presenter.state.title
+            navigationBackgroundView.backgroundColor = .white
+            titleLabel.alpha = 0
         }
         view.setNeedsLayout()
         view.layoutIfNeeded()

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TabBarModuleOutput {
-    func moviesTappedEventTriggered(_ moduleInput: TabBarModuleInput)
+    func tabBarDidSelect(controller: UINavigationController)
 }
 
 protocol TabBarModuleInput: AnyObject {
@@ -17,8 +17,9 @@ protocol TabBarModuleInput: AnyObject {
 }
 
 final class TabBarModule {
-    let viewController: TabBarViewController
+    let viewController: TabBarController
     let presenter: TabBarPresenter
+    let state: TabBarState
 
     var output: TabBarModuleOutput? {
         didSet {
@@ -31,9 +32,9 @@ final class TabBarModule {
     }
 
     init(state: TabBarState) {
+        self.state = state
         let presenter = TabBarPresenter(state: state)
-        let viewController = TabBarViewController(presenter: presenter)
-        presenter.view = viewController
+        let viewController = TabBarController(presenter: presenter)
         self.presenter = presenter
         self.viewController = viewController
     }

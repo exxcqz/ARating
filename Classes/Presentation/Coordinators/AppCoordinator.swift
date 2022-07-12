@@ -7,39 +7,36 @@
 
 import UIKit
 
-final class AppCoordinator: BaseCoordinator<UINavigationController> {
+final class AppCoordinator {
 
     private var window: UIWindow?
     private var bookmarksModule: BookmarksModule?
-
-    init() {
-        let navigationController = UINavigationController()
-        super.init(rootViewController: navigationController)
-    }
+    private var rootViewController: UINavigationController?
 
     func start(with scene: UIWindowScene) {
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = rootViewController
+        let tabBarModule = createTabBarModule()
+        rootViewController = tabBarModule.state.viewControllers.first
+        window?.rootViewController = tabBarModule.viewController
         window?.makeKeyAndVisible()
-        openTabBarModule()
     }
 
-    private func openTabBarModule() {
-        let moviesModule = createMoviesModule()
+    private func createTabBarModule() -> TabBarModule {
+        let moviesModule = createTopListModule()
         let bookmarksModule = createBookmarksModule()
         self.bookmarksModule = bookmarksModule
 
-        let tabBarItems: [TabBarCellModel] = [
-            TabBarCellModel(viewController: moviesModule.viewController, image: Asset.icTop.image, title: L10n.Tabbar.Top.title),
-            TabBarCellModel(viewController: UIViewController(), image: Asset.icSearch.image, title: L10n.Tabbar.Search.title),
-            TabBarCellModel(viewController: bookmarksModule.viewController, image: Asset.icBookmark.image, title: L10n.Tabbar.Bookmarks.title)
+        let tabBarItems: [TabBarModel] = [
+            TabBarModel(viewController: moviesModule.viewController, image: Asset.icTop.image, title: L10n.Tabbar.Top.title, tag: 0),
+            TabBarModel(viewController: UIViewController(), image: Asset.icSearch.image, title: L10n.Tabbar.Search.title, tag: 1),
+            TabBarModel(viewController: bookmarksModule.viewController, image: Asset.icBookmark.image, title: L10n.Tabbar.Bookmarks.title, tag: 2)
         ]
         let tabBarModule = TabBarModule(state: TabBarState(items: tabBarItems))
         tabBarModule.output = self
-        rootViewController.pushViewController(tabBarModule.viewController, animated: true)
+        return tabBarModule
     }
 
-    private func createMoviesModule() -> TopListModule {
+    private func createTopListModule() -> TopListModule {
         let module = TopListModule()
         module.output = self
         return module
@@ -63,8 +60,8 @@ final class AppCoordinator: BaseCoordinator<UINavigationController> {
 
 extension AppCoordinator: TabBarModuleOutput {
 
-    func moviesTappedEventTriggered(_ moduleInput: TabBarModuleInput) {
-
+    func tabBarDidSelect(controller: UINavigationController) {
+        rootViewController = controller
     }
 }
 
@@ -73,7 +70,7 @@ extension AppCoordinator: TopListModuleOutput {
     func topListCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeInfo: AnimeInfo) {
         let animeModel = AnimeModel(animeInfo: animeInfo)
         let animeDetailsModule = createAnimeDetailsModule(animeModel: animeModel)
-        rootViewController.pushViewController(animeDetailsModule.viewController, animated: false)
+        rootViewController?.pushViewController(animeDetailsModule.viewController, animated: false)
     }
 }
 
@@ -83,18 +80,18 @@ extension AppCoordinator: AnimeDetailsModuleOutput {
     }
 
     func animeDetailsSynopsisTappedEventTriggered(synopsis: String) {
-        rootViewController.pushViewController(SynopsisViewController(synopsis: synopsis), animated: true)
+        rootViewController?.pushViewController(SynopsisViewController(synopsis: synopsis), animated: true)
     }
 
     func animeDetailsBackButtonEventTriggered() {
-        rootViewController.popViewController(animated: true)
+        rootViewController?.popViewController(animated: true)
         bookmarksModule?.input.updateCollectionView()
     }
 
     func animeDetailsRecommendationCellEventTriggered(animeInfo: AnimeInfo) {
         let animeModel = AnimeModel(animeInfo: animeInfo)
         let animeDetailsModule = createAnimeDetailsModule(animeModel: animeModel)
-        rootViewController.pushViewController(animeDetailsModule.viewController, animated: false)
+        rootViewController?.pushViewController(animeDetailsModule.viewController, animated: false)
     }
 }
 
@@ -102,6 +99,6 @@ extension AppCoordinator: BookmarksModuleOutput {
 
     func bookmarksCellTappedEventTriggered(_ moduleInput: BookmarksModuleInput, animeModel: AnimeModel) {
         let animeDetailsModule = createAnimeDetailsModule(animeModel: animeModel)
-        rootViewController.pushViewController(animeDetailsModule.viewController, animated: false)
+        rootViewController?.pushViewController(animeDetailsModule.viewController, animated: false)
     }
 }

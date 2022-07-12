@@ -5,7 +5,7 @@
 //  Created by Nikita Gavrikov on 29.06.2022.
 //
 
-import Foundation
+import UIKit
 
 final class TabBarPresenter {
     var view: TabBarViewInput?
@@ -15,17 +15,33 @@ final class TabBarPresenter {
 
     init(state: TabBarState) {
         self.state = state
+        loadViewControllers()
     }
 
-    func didSelectCell(with indexPath: IndexPath) {
-        state.selectedCell = indexPath.row
-        state.embeddedView = state.items[indexPath.row].viewController.view
-        view?.update(with: state, force: false, animated: true)
+    private func loadViewControllers() {
+        state.viewControllers = state.items.map {
+            createNavController(for: $0.viewController,
+                                   title: $0.title,
+                                   image: $0.image,
+                                   tag: $0.tag)
+        }
     }
 
-    func viewDidLoad() {
-        state.embeddedView = state.items[state.selectedCell].viewController.view
-        view?.update(with: state, force: false, animated: true)
+    func didSelect(index: Int) {
+        let navController = state.viewControllers[index]
+        output?.tabBarDidSelect(controller: navController)
+    }
+
+    private func createNavController(for rootViewController: UIViewController,
+                                     title: String,
+                                     image: UIImage,
+                                     tag: Int) -> UINavigationController {
+        let navController = UINavigationController(rootViewController: rootViewController)
+        navController.tabBarItem.title = title
+        navController.tabBarItem.image = image
+        navController.tabBarItem.tag = tag
+        rootViewController.navigationItem.title = title
+        return navController
     }
 }
 

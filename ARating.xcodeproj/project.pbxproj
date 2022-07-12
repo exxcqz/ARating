@@ -43,12 +43,10 @@
 		116CDCBE286C05FF0035AF34 /* TopListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCBD286C05FF0035AF34 /* TopListPresenter.swift */; };
 		116CDCC3286C0B390035AF34 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCBF286C0B390035AF34 /* TabBarPresenter.swift */; };
 		116CDCC4286C0B390035AF34 /* TabBarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCC0286C0B390035AF34 /* TabBarModule.swift */; };
-		116CDCC5286C0B390035AF34 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCC1286C0B390035AF34 /* TabBarViewController.swift */; };
+		116CDCC5286C0B390035AF34 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCC1286C0B390035AF34 /* TabBarController.swift */; };
 		116CDCC6286C0B390035AF34 /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCC2286C0B390035AF34 /* TabBarState.swift */; };
 		116CDCC9286C0F0B0035AF34 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCC8286C0F0B0035AF34 /* BaseCoordinator.swift */; };
 		116CDCCB286C0F200035AF34 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCCA286C0F200035AF34 /* AppCoordinator.swift */; };
-		116CDCCE286C1CDC0035AF34 /* TabBarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCCD286C1CDC0035AF34 /* TabBarViewCell.swift */; };
-		116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCCF286C20180035AF34 /* TabBarCellModel.swift */; };
 		116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCD2286C258E0035AF34 /* UIColor+App.swift */; };
 		116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCD4286C3EA20035AF34 /* UIColor+Rgb.swift */; };
 		116CDCD8286C50150035AF34 /* TopListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDCD7286C50150035AF34 /* TopListViewCell.swift */; };
@@ -74,6 +72,7 @@
 		11A65C32287D3A3500E24418 /* RecommendedAnime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C31287D3A3500E24418 /* RecommendedAnime.swift */; };
 		11A65C35287D3F1B00E24418 /* RecommendationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C34287D3F1B00E24418 /* RecommendationsViewCell.swift */; };
 		11A65C37287D3F3F00E24418 /* RecommendationsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C36287D3F3F00E24418 /* RecommendationsCellModel.swift */; };
+		11A65C39287D885300E24418 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C38287D885300E24418 /* TabBarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,12 +128,10 @@
 		116CDCBD286C05FF0035AF34 /* TopListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListPresenter.swift; sourceTree = "<group>"; };
 		116CDCBF286C0B390035AF34 /* TabBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		116CDCC0286C0B390035AF34 /* TabBarModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarModule.swift; sourceTree = "<group>"; };
-		116CDCC1286C0B390035AF34 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		116CDCC1286C0B390035AF34 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		116CDCC2286C0B390035AF34 /* TabBarState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
 		116CDCC8286C0F0B0035AF34 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		116CDCCA286C0F200035AF34 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		116CDCCD286C1CDC0035AF34 /* TabBarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewCell.swift; sourceTree = "<group>"; };
-		116CDCCF286C20180035AF34 /* TabBarCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarCellModel.swift; path = ../../../../../../../../Documents/TabBarCellModel.swift; sourceTree = "<group>"; };
 		116CDCD2286C258E0035AF34 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		116CDCD4286C3EA20035AF34 /* UIColor+Rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Rgb.swift"; sourceTree = "<group>"; };
 		116CDCD7286C50150035AF34 /* TopListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +158,7 @@
 		11A65C31287D3A3500E24418 /* RecommendedAnime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedAnime.swift; sourceTree = "<group>"; };
 		11A65C34287D3F1B00E24418 /* RecommendationsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewCell.swift; sourceTree = "<group>"; };
 		11A65C36287D3F3F00E24418 /* RecommendationsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCellModel.swift; sourceTree = "<group>"; };
+		11A65C38287D885300E24418 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,11 +326,11 @@
 		116CDCB6286C05110035AF34 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				116CDCCC286C1B910035AF34 /* Cell */,
+				11A65C38287D885300E24418 /* TabBarModel.swift */,
 				116CDCC0286C0B390035AF34 /* TabBarModule.swift */,
 				116CDCBF286C0B390035AF34 /* TabBarPresenter.swift */,
 				116CDCC2286C0B390035AF34 /* TabBarState.swift */,
-				116CDCC1286C0B390035AF34 /* TabBarViewController.swift */,
+				116CDCC1286C0B390035AF34 /* TabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -344,15 +342,6 @@
 				116CDCCA286C0F200035AF34 /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		116CDCCC286C1B910035AF34 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				116CDCCD286C1CDC0035AF34 /* TabBarViewCell.swift */,
-				116CDCCF286C20180035AF34 /* TabBarCellModel.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		116CDCD1286C257E0035AF34 /* Extensions */ = {
@@ -552,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112648E52876F30B00EF9D67 /* BookmarksViewController.swift in Sources */,
+				11A65C39287D885300E24418 /* TabBarModel.swift in Sources */,
 				1126558B287BFD4C00894134 /* RecommendationsList.swift in Sources */,
 				116CDCF3286D86D00035AF34 /* TopListIndicatorViewCell.swift in Sources */,
 				116CDCEB286C73340035AF34 /* DataResult.swift in Sources */,
@@ -559,7 +549,7 @@
 				11A65C30287D39F300E24418 /* RecommendationItem.swift in Sources */,
 				116CDCDE286C68B60035AF34 /* NetworkService.swift in Sources */,
 				116CDCC6286C0B390035AF34 /* TabBarState.swift in Sources */,
-				116CDCC5286C0B390035AF34 /* TabBarViewController.swift in Sources */,
+				116CDCC5286C0B390035AF34 /* TabBarController.swift in Sources */,
 				116CDCEF286C76B40035AF34 /* AnimeInfo.swift in Sources */,
 				11A65C37287D3F3F00E24418 /* RecommendationsCellModel.swift in Sources */,
 				116CDCC9286C0F0B0035AF34 /* BaseCoordinator.swift in Sources */,
@@ -571,7 +561,6 @@
 				116CDCC3286C0B390035AF34 /* TabBarPresenter.swift in Sources */,
 				112648DF2876968D00EF9D67 /* DatabaseServiceImp.swift in Sources */,
 				116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */,
-				116CDCCE286C1CDC0035AF34 /* TabBarViewCell.swift in Sources */,
 				112648F22877E0BE00EF9D67 /* AnimeById.swift in Sources */,
 				116CDCCB286C0F200035AF34 /* AppCoordinator.swift in Sources */,
 				116CDCBE286C05FF0035AF34 /* TopListPresenter.swift in Sources */,
@@ -587,7 +576,6 @@
 				11A65C35287D3F1B00E24418 /* RecommendationsViewCell.swift in Sources */,
 				116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */,
 				116CDD00286DBB8A0035AF34 /* AnimeDetailsViewController.swift in Sources */,
-				116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */,
 				116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */,
 				116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */,
 				112648EB2876F33500EF9D67 /* BookmarksState.swift in Sources */,
