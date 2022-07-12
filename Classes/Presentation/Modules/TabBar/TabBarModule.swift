@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TabBarModuleOutput {
-    func tabBarDidSelect(controller: UINavigationController)
+    func tabBarDidSelect(navigationController: UINavigationController)
 }
 
 protocol TabBarModuleInput: AnyObject {

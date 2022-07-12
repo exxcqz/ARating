@@ -60,8 +60,8 @@ final class AppCoordinator {
 
 extension AppCoordinator: TabBarModuleOutput {
 
-    func tabBarDidSelect(controller: UINavigationController) {
-        rootViewController = controller
+    func tabBarDidSelect(navigationController: UINavigationController) {
+        rootViewController = navigationController
     }
 }
 

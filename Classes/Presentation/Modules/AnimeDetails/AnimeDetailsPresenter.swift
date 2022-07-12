@@ -79,6 +79,7 @@ final class AnimeDetailsPresenter {
                 return
             }
             self.state.recommendationsModels = result.data.map { RecommendationsCellModel(recommendedItem: $0, presenter: self) }
+            self.update(force: false, animated: true)
         }
     }
 

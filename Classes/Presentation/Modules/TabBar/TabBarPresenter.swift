@@ -29,7 +29,7 @@ final class TabBarPresenter {
 
     func didSelect(index: Int) {
         let navController = state.viewControllers[index]
-        output?.tabBarDidSelect(controller: navController)
+        output?.tabBarDidSelect(navigationController: navController)
     }
 
     private func createNavController(for rootViewController: UIViewController,

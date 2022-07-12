@@ -119,6 +119,12 @@ final class AnimeDetailsViewController: UIViewController {
         return view
     }()
 
+    private lazy var bottomBackgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .main2A
+        return view
+    }()
+
     // MARK: - Lifecycle
 
     init(presenter: AnimeDetailsPresenter) {
@@ -220,6 +226,13 @@ final class AnimeDetailsViewController: UIViewController {
                 .right()
                 .top(to: synopsisButton.nui_bottom, inset: 10)
         }
+
+        bottomBackgroundView.configureFrame { maker in
+            maker.height(view.safeAreaInsets.bottom)
+                .bottom()
+                .left()
+                .right()
+        }
     }
 
     // MARK: - Actions
@@ -263,6 +276,7 @@ final class AnimeDetailsViewController: UIViewController {
         backdropView.addSubview(recommendationsView)
         view.addSubview(bookmarkButton)
         view.addSubview(navigationBackgroundView)
+        view.addSubview(bottomBackgroundView)
 
         scrollView.delegate = self
         presenter.viewDidLoad()
@@ -324,7 +338,7 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
             titleLabel.alpha = 1
         }
         else {
-            navigationItem.title = self.presenter.state.title
+            navigationItem.title = presenter.state.title
             navigationBackgroundView.backgroundColor = .white
             titleLabel.alpha = 0
         }
