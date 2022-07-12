@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct AnimeList: Codable {
-    let data: [AnimeInfo]
+struct RecommendationsList: Codable {
+    let data: [RecommendationItem]
 }

@@ -11,6 +11,17 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum Animedetails {
+    internal enum Recommendations {
+      /// Recommendations
+      internal static let title = L10n.tr("Localizable", "animedetails.recommendations.title")
+    }
+    internal enum Synopsis {
+      /// Synopsis
+      internal static let title = L10n.tr("Localizable", "animedetails.synopsis.title")
+    }
+  }
+
   internal enum Movies {
     internal enum Now {
       /// Now

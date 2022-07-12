@@ -114,6 +114,11 @@ final class AnimeDetailsViewController: UIViewController {
         return view
     }()
 
+    private lazy var recommendationsView: RecommendationsView = {
+        let view = RecommendationsView(presenter: presenter)
+        return view
+    }()
+
     // MARK: - Lifecycle
 
     init(presenter: AnimeDetailsPresenter) {
@@ -206,7 +211,14 @@ final class AnimeDetailsViewController: UIViewController {
         synopsisButton.configureFrame { maker in
             maker.sizeToFit()
                 .top(to: synopsisLabel.nui_bottom, inset: 3)
-                .left(to: synopsisLabel.nui_left)
+                .left(inset: 30)
+        }
+
+        recommendationsView.configureFrame { maker in
+            maker.height(200)
+                .left()
+                .right()
+                .top(to: synopsisButton.nui_bottom, inset: 10)
         }
     }
 
@@ -237,6 +249,7 @@ final class AnimeDetailsViewController: UIViewController {
         addCustomBackButton()
         addSwipeGestureRecognizer()
         viewsIsHidden(isHidden: true)
+
         view.addSubview(indicatorView)
         view.addSubview(imageView)
         view.addSubview(scrollView)
@@ -247,6 +260,7 @@ final class AnimeDetailsViewController: UIViewController {
         backdropView.addSubview(genresLabel)
         backdropView.addSubview(synopsisLabel)
         backdropView.addSubview(synopsisButton)
+        backdropView.addSubview(recommendationsView)
         view.addSubview(bookmarkButton)
         view.addSubview(navigationBackgroundView)
 
@@ -293,6 +307,7 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
         genresLabel.text = state.genres
         synopsisLabel.text = state.synopsis
         viewsIsHidden(isHidden: false)
+        recommendationsView.collectionView.reloadData()
 
         imageViewScale = state.imageViewScale
 

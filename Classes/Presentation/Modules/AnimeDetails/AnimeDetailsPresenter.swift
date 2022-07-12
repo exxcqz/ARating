@@ -26,6 +26,7 @@ final class AnimeDetailsPresenter {
     func viewDidLoad() {
         updateState()
         fetchImage()
+        fetchRecommendedItems()
     }
 
     func addToFavorites() {
@@ -54,6 +55,31 @@ final class AnimeDetailsPresenter {
 
     func backButtonTapped() {
         output?.animeDetailsBackButtonEventTriggered()
+    }
+
+    func cellTappedEventTriggered(with indexPath: IndexPath) {
+        let id = state.recommendationsModels[indexPath.row].id
+        dependencies.networkService.fetchAnimeById(id: id) { result, error in
+            if let _ = error {
+                return
+            }
+            guard let result = result else {
+                return
+            }
+            self.output?.animeDetailsRecommendationCellEventTriggered(animeInfo: result.data)
+        }
+    }
+
+    func fetchRecommendedItems() {
+        dependencies.networkService.fetchRecommendationsList(id: state.animeModel.id) { result, error in
+            if let _ = error {
+                return
+            }
+            guard let result = result else {
+                return
+            }
+            self.state.recommendationsModels = result.data.map { RecommendationsCellModel(recommendedItem: $0, presenter: self) }
+        }
     }
 
     // MARK: - Private

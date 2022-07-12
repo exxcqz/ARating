@@ -45,13 +45,13 @@ final class NetworkServiceImp: NetworkService {
         }
     }
 
-    func fetchRecommendationsItems(id: Int, response: @escaping (AnimeList?, Error?) -> Void) {
+    func fetchRecommendationsList(id: Int, response: @escaping (RecommendationsList?, Error?) -> Void) {
         let request = NetworkType.getRecommendationsList(id: id).request
         NetworkRequest.shared.requestData(request: request) { result in
             switch result {
             case .success(let data):
                 do {
-                    let dataResult = try JSONDecoder().decode(AnimeList.self, from: data)
+                    let dataResult = try JSONDecoder().decode(RecommendationsList.self, from: data)
                     response(dataResult, nil)
                 } catch let jsonError {
                     print("Failed decode JSON", jsonError)

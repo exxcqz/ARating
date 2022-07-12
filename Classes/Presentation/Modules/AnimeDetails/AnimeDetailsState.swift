@@ -10,6 +10,7 @@ import UIKit
 final class AnimeDetailsState {
     var animeModel: AnimeModel
 
+    var recommendationsModels: [RecommendationsCellModel] = []
     var image: UIImage?
     var title: String
     var year: Int

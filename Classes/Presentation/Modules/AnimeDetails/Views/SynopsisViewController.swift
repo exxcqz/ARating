@@ -57,9 +57,8 @@ final class SynopsisViewController: UIViewController {
         view.backgroundColor = .main2A
         view.addSubview(scrollView)
         scrollView.addSubview(synopsisLabel)
-
         scrollView.delegate = self
-        navigationItem.title = "Synopsis"
+        navigationItem.title = L10n.Animedetails.Synopsis.title
     }
 }
 

@@ -90,6 +90,12 @@ extension AppCoordinator: AnimeDetailsModuleOutput {
         rootViewController.popViewController(animated: true)
         bookmarksModule?.input.updateCollectionView()
     }
+
+    func animeDetailsRecommendationCellEventTriggered(animeInfo: AnimeInfo) {
+        let animeModel = AnimeModel(animeInfo: animeInfo)
+        let animeDetailsModule = createAnimeDetailsModule(animeModel: animeModel)
+        rootViewController.pushViewController(animeDetailsModule.viewController, animated: false)
+    }
 }
 
 extension AppCoordinator: BookmarksModuleOutput {

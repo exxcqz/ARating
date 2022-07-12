@@ -20,7 +20,7 @@
 		112648EE2876F5BB00EF9D67 /* BookmarkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648ED2876F5BB00EF9D67 /* BookmarkViewCell.swift */; };
 		112648F02876F5EB00EF9D67 /* BookmarkCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648EF2876F5EB00EF9D67 /* BookmarkCellModel.swift */; };
 		112648F22877E0BE00EF9D67 /* AnimeById.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112648F12877E0BE00EF9D67 /* AnimeById.swift */; };
-		1126558B287BFD4C00894134 /* AnimeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126558A287BFD4C00894134 /* AnimeList.swift */; };
+		1126558B287BFD4C00894134 /* RecommendationsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126558A287BFD4C00894134 /* RecommendationsList.swift */; };
 		116CDC69286B1DEF0035AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDC68286B1DEF0035AF34 /* AppDelegate.swift */; };
 		116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDC6A286B1DEF0035AF34 /* SceneDelegate.swift */; };
 		116CDC72286B1DF40035AF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116CDC71286B1DF40035AF34 /* Assets.xcassets */; };
@@ -69,6 +69,11 @@
 		116CDD04286DBBAF0035AF34 /* AnimeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD03286DBBAF0035AF34 /* AnimeDetailsPresenter.swift */; };
 		116CDD06286EC66E0035AF34 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CDD05286EC66E0035AF34 /* Layout.swift */; };
 		116E83572872D3C700B6E457 /* SynopsisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E83562872D3C700B6E457 /* SynopsisViewController.swift */; };
+		11A65C2D287D2AF600E24418 /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C2C287D2AF600E24418 /* RecommendationsView.swift */; };
+		11A65C30287D39F300E24418 /* RecommendationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C2F287D39F300E24418 /* RecommendationItem.swift */; };
+		11A65C32287D3A3500E24418 /* RecommendedAnime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C31287D3A3500E24418 /* RecommendedAnime.swift */; };
+		11A65C35287D3F1B00E24418 /* RecommendationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C34287D3F1B00E24418 /* RecommendationsViewCell.swift */; };
+		11A65C37287D3F3F00E24418 /* RecommendationsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C36287D3F3F00E24418 /* RecommendationsCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,7 +105,7 @@
 		112648ED2876F5BB00EF9D67 /* BookmarkViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewCell.swift; sourceTree = "<group>"; };
 		112648EF2876F5EB00EF9D67 /* BookmarkCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellModel.swift; sourceTree = "<group>"; };
 		112648F12877E0BE00EF9D67 /* AnimeById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeById.swift; sourceTree = "<group>"; };
-		1126558A287BFD4C00894134 /* AnimeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeList.swift; sourceTree = "<group>"; };
+		1126558A287BFD4C00894134 /* RecommendationsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsList.swift; sourceTree = "<group>"; };
 		116CDC65286B1DEF0035AF34 /* ARating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		116CDC68286B1DEF0035AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116CDC6A286B1DEF0035AF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +156,11 @@
 		116CDD05286EC66E0035AF34 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		116E83522872D1CA00B6E457 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
 		116E83562872D3C700B6E457 /* SynopsisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynopsisViewController.swift; sourceTree = "<group>"; };
+		11A65C2C287D2AF600E24418 /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
+		11A65C2F287D39F300E24418 /* RecommendationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationItem.swift; sourceTree = "<group>"; };
+		11A65C31287D3A3500E24418 /* RecommendedAnime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedAnime.swift; sourceTree = "<group>"; };
+		11A65C34287D3F1B00E24418 /* RecommendationsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewCell.swift; sourceTree = "<group>"; };
+		11A65C36287D3F3F00E24418 /* RecommendationsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,12 +387,14 @@
 		116CDCE9286C71FD0035AF34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				112648E02876973E00EF9D67 /* AnimeModel.swift */,
 				116CDCEA286C73340035AF34 /* DataResult.swift */,
 				116CDCEC286C74760035AF34 /* PageInfo.swift */,
 				116CDCEE286C76B40035AF34 /* AnimeInfo.swift */,
-				112648E02876973E00EF9D67 /* AnimeModel.swift */,
 				112648F12877E0BE00EF9D67 /* AnimeById.swift */,
-				1126558A287BFD4C00894134 /* AnimeList.swift */,
+				1126558A287BFD4C00894134 /* RecommendationsList.swift */,
+				11A65C2F287D39F300E24418 /* RecommendationItem.swift */,
+				11A65C31287D3A3500E24418 /* RecommendedAnime.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,9 +426,28 @@
 		116E83552872D3A300B6E457 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11A65C2E287D2DF100E24418 /* RecommendationsView */,
 				116E83562872D3C700B6E457 /* SynopsisViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		11A65C2E287D2DF100E24418 /* RecommendationsView */ = {
+			isa = PBXGroup;
+			children = (
+				11A65C33287D3F0900E24418 /* Cell */,
+				11A65C2C287D2AF600E24418 /* RecommendationsView.swift */,
+			);
+			path = RecommendationsView;
+			sourceTree = "<group>";
+		};
+		11A65C33287D3F0900E24418 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				11A65C34287D3F1B00E24418 /* RecommendationsViewCell.swift */,
+				11A65C36287D3F3F00E24418 /* RecommendationsCellModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,14 +552,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				112648E52876F30B00EF9D67 /* BookmarksViewController.swift in Sources */,
-				1126558B287BFD4C00894134 /* AnimeList.swift in Sources */,
+				1126558B287BFD4C00894134 /* RecommendationsList.swift in Sources */,
 				116CDCF3286D86D00035AF34 /* TopListIndicatorViewCell.swift in Sources */,
 				116CDCEB286C73340035AF34 /* DataResult.swift in Sources */,
 				116CDCE3286C6A870035AF34 /* NetworkType.swift in Sources */,
+				11A65C30287D39F300E24418 /* RecommendationItem.swift in Sources */,
 				116CDCDE286C68B60035AF34 /* NetworkService.swift in Sources */,
 				116CDCC6286C0B390035AF34 /* TabBarState.swift in Sources */,
 				116CDCC5286C0B390035AF34 /* TabBarViewController.swift in Sources */,
 				116CDCEF286C76B40035AF34 /* AnimeInfo.swift in Sources */,
+				11A65C37287D3F3F00E24418 /* RecommendationsCellModel.swift in Sources */,
 				116CDCC9286C0F0B0035AF34 /* BaseCoordinator.swift in Sources */,
 				116CDCBA286C05D10035AF34 /* TopListState.swift in Sources */,
 				116CDCB8286C054B0035AF34 /* TopListModule.swift in Sources */,
@@ -543,6 +576,7 @@
 				116CDCCB286C0F200035AF34 /* AppCoordinator.swift in Sources */,
 				116CDCBE286C05FF0035AF34 /* TopListPresenter.swift in Sources */,
 				116CDC69286B1DEF0035AF34 /* AppDelegate.swift in Sources */,
+				11A65C2D287D2AF600E24418 /* RecommendationsView.swift in Sources */,
 				116CDCB2286B26160035AF34 /* Strings.swift in Sources */,
 				112648E92876F32800EF9D67 /* BookmarksModule.swift in Sources */,
 				116CDCD8286C50150035AF34 /* TopListViewCell.swift in Sources */,
@@ -550,12 +584,14 @@
 				112648DD2876967D00EF9D67 /* DatabaseService.swift in Sources */,
 				112648E12876973E00EF9D67 /* AnimeModel.swift in Sources */,
 				116E83572872D3C700B6E457 /* SynopsisViewController.swift in Sources */,
+				11A65C35287D3F1B00E24418 /* RecommendationsViewCell.swift in Sources */,
 				116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */,
 				116CDD00286DBB8A0035AF34 /* AnimeDetailsViewController.swift in Sources */,
 				116CDCD0286C20180035AF34 /* TabBarCellModel.swift in Sources */,
 				116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */,
 				116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */,
 				112648EB2876F33500EF9D67 /* BookmarksState.swift in Sources */,
+				11A65C32287D3A3500E24418 /* RecommendedAnime.swift in Sources */,
 				116CDD04286DBBAF0035AF34 /* AnimeDetailsPresenter.swift in Sources */,
 				112648EE2876F5BB00EF9D67 /* BookmarkViewCell.swift in Sources */,
 				116CDCED286C74760035AF34 /* PageInfo.swift in Sources */,
@@ -643,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -698,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -724,7 +760,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -734,7 +770,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -754,7 +790,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -764,7 +800,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

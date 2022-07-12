@@ -8,3 +8,6 @@
 
 "movies.now.title" = "Now";
 "movies.top.title" = "Top";
+
+"animedetails.synopsis.title" = "Synopsis";
+"animedetails.recommendations.title" = "Recommendations";

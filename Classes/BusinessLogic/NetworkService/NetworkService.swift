@@ -14,6 +14,6 @@ protocol HasNetworkService {
 protocol NetworkService: AnyObject {
     func fetchTopListItems(page: Int, response: @escaping (DataResult?, Error?) -> Void)
     func fetchAnimeById(id: Int, response: @escaping (AnimeById?, Error?) -> Void)
-    func fetchRecommendationsItems(id: Int, response: @escaping (AnimeList?, Error?) -> Void)
+    func fetchRecommendationsList(id: Int, response: @escaping (RecommendationsList?, Error?) -> Void)
     func fetchImage(url: String, completion: @escaping (UIImage) -> Void)
 }

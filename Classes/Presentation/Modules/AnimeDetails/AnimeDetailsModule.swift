@@ -11,6 +11,7 @@ protocol AnimeDetailsModuleOutput {
     func animeDetailsTappedEventTriggered(_ moduleInput: AnimeDetailsModuleInput)
     func animeDetailsSynopsisTappedEventTriggered(synopsis: String)
     func animeDetailsBackButtonEventTriggered()
+    func animeDetailsRecommendationCellEventTriggered(animeInfo: AnimeInfo)
 }
 
 protocol AnimeDetailsModuleInput: AnyObject {
