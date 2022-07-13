@@ -72,6 +72,18 @@ extension AppCoordinator: TopListModuleOutput {
         let animeDetailsModule = createAnimeDetailsModule(animeModel: animeModel)
         rootViewController?.pushViewController(animeDetailsModule.viewController, animated: false)
     }
+
+    func topListSearchButtonEventTriggered(query: String) {
+        let topListModule = createTopListModule()
+        topListModule.presenter.state.query = query
+        topListModule.presenter.state.searchModeActivated = true
+        rootViewController?.popViewController(animated: false)
+        rootViewController?.pushViewController(topListModule.viewController, animated: true)
+    }
+
+    func topListCancelButtonEventTriggered() {
+        rootViewController?.popViewController(animated: true)
+    }
 }
 
 extension AppCoordinator: AnimeDetailsModuleOutput {

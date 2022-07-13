@@ -23,7 +23,7 @@ final class TopListPresenter {
         self.dependencies = dependencies
     }
 
-    func fetchItems() {
+    func fetchTopItems() {
         if !state.isEventScroll {
             dependencies.networkService.fetchTopListItems(page: state.currentPage) { result, error in
                 if let _ = error {
@@ -52,29 +52,21 @@ final class TopListPresenter {
         output?.topListCellTappedEventTriggered(self, animeInfo: model.animeInfo)
     }
 
-    func fetchNewPage() {
+    func fetchItems() {
         if state.searchModeActivated {
             fetchSearchItems()
         }
         else {
-            fetchItems()
+            fetchTopItems()
         }
     }
 
     func searchButtonTapped(query: String) {
-        state.currentPage = 1
-        state.items = []
-        state.query = query
-        state.searchModeActivated = true
-        fetchSearchItems()
+        output?.topListSearchButtonEventTriggered(query: query)
     }
 
     func cancelButtonTapped() {
-        state.currentPage = 1
-        state.items = []
-        state.query = ""
-        state.searchModeActivated = false
-        fetchItems()
+        output?.topListCancelButtonEventTriggered()
     }
 
     func fetchSearchItems() {

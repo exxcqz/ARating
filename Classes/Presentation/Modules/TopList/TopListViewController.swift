@@ -66,6 +66,7 @@ final class TopListViewController: UIViewController {
         view.backgroundColor = .main2A
         view.addSubview(collectionView)
         setupSearchController()
+        setupNavigationBar()
         collectionView.dataSource = self
         collectionView.delegate = self
         presenter.fetchItems()
@@ -73,7 +74,15 @@ final class TopListViewController: UIViewController {
 
     private func setupSearchController() {
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = self
+        if presenter.state.searchModeActivated {
+            navigationItem.title = presenter.state.query
+        }
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.hidesBackButton = true
     }
 }
 
@@ -150,7 +159,7 @@ extension TopListViewController: UIScrollViewDelegate {
         let contentHeight = scrollView.contentSize.height
         if offset > (contentHeight - scrollView.frame.height - 100) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.presenter.fetchNewPage()
+                self.presenter.fetchItems()
             }
         }
     }
@@ -166,11 +175,9 @@ extension TopListViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         presenter.searchButtonTapped(query: searchBar.text ?? "")
-        collectionView.contentOffset = .zero
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         presenter.cancelButtonTapped()
-        collectionView.contentOffset = .zero
     }
 }

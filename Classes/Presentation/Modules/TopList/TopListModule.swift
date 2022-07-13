@@ -9,6 +9,8 @@ import UIKit
 
 protocol TopListModuleOutput {
     func topListCellTappedEventTriggered(_ moduleInput: TopListModuleInput, animeInfo: AnimeInfo)
+    func topListSearchButtonEventTriggered(query: String)
+    func topListCancelButtonEventTriggered()
 }
 
 protocol TopListModuleInput: AnyObject {
