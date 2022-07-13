@@ -10,7 +10,7 @@ import UIKit
 
 final class BookmarksPresenter {
 
-    typealias Dependencies = HasNetworkService & HasDatabaseService
+    typealias Dependencies = HasNetworkService & HasDatabaseService & HasCacheService
 
     var view: BookmarksViewInput?
     var output: BookmarksModuleOutput?

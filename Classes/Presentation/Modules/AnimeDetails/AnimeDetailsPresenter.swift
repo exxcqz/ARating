@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 final class AnimeDetailsPresenter {
-    typealias Dependencies = HasNetworkService & HasDatabaseService
+    typealias Dependencies = HasNetworkService & HasDatabaseService & HasCacheService
     
     var view: AnimeDetailsViewInput?
     var output: AnimeDetailsModuleOutput?

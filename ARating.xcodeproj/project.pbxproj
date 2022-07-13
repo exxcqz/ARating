@@ -73,6 +73,8 @@
 		11A65C35287D3F1B00E24418 /* RecommendationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C34287D3F1B00E24418 /* RecommendationsViewCell.swift */; };
 		11A65C37287D3F3F00E24418 /* RecommendationsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C36287D3F3F00E24418 /* RecommendationsCellModel.swift */; };
 		11A65C39287D885300E24418 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C38287D885300E24418 /* TabBarModel.swift */; };
+		11A65C3B287E928500E24418 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C3A287E928500E24418 /* CacheService.swift */; };
+		11A65C3E287E92BB00E24418 /* CacheServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C3D287E92BB00E24418 /* CacheServiceImp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -159,6 +161,8 @@
 		11A65C34287D3F1B00E24418 /* RecommendationsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewCell.swift; sourceTree = "<group>"; };
 		11A65C36287D3F3F00E24418 /* RecommendationsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCellModel.swift; sourceTree = "<group>"; };
 		11A65C38287D885300E24418 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
+		11A65C3A287E928500E24418 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		11A65C3D287E92BB00E24418 /* CacheServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheServiceImp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +271,7 @@
 		116CDC80286B1F250035AF34 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				11A65C3C287E928B00E24418 /* CacheService */,
 				112648DB2876966700EF9D67 /* DatabaseService */,
 				116CDCE6286C705D0035AF34 /* NetworkService */,
 				116CDCE2286C6A870035AF34 /* NetworkType.swift */,
@@ -439,6 +444,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		11A65C3C287E928B00E24418 /* CacheService */ = {
+			isa = PBXGroup;
+			children = (
+				11A65C3A287E928500E24418 /* CacheService.swift */,
+				11A65C3D287E92BB00E24418 /* CacheServiceImp.swift */,
+			);
+			path = CacheService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -578,7 +592,9 @@
 				116CDD00286DBB8A0035AF34 /* AnimeDetailsViewController.swift in Sources */,
 				116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */,
 				116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */,
+				11A65C3B287E928500E24418 /* CacheService.swift in Sources */,
 				112648EB2876F33500EF9D67 /* BookmarksState.swift in Sources */,
+				11A65C3E287E92BB00E24418 /* CacheServiceImp.swift in Sources */,
 				11A65C32287D3A3500E24418 /* RecommendedAnime.swift in Sources */,
 				116CDD04286DBBAF0035AF34 /* AnimeDetailsPresenter.swift in Sources */,
 				112648EE2876F5BB00EF9D67 /* BookmarkViewCell.swift in Sources */,
