@@ -10,7 +10,7 @@ import UIKit
 
 final class TopListPresenter {
 
-    typealias Dependencies = HasNetworkService
+    typealias Dependencies = HasNetworkService & HasCacheService
 
     var view: TopListViewInput?
     var output: TopListModuleOutput?

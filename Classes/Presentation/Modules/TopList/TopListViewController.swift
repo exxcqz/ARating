@@ -76,6 +76,7 @@ final class TopListViewController: UIViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = self
+        searchController.searchBar.showsCancelButton = presenter.state.searchModeActivated ? true:false
         if presenter.state.searchModeActivated {
             navigationItem.title = presenter.state.query
         }
@@ -175,6 +176,8 @@ extension TopListViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         presenter.searchButtonTapped(query: searchBar.text ?? "")
+        searchBar.text = ""
+        searchBar.endEditing(true)
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
