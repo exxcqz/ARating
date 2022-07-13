@@ -51,6 +51,49 @@ final class TopListPresenter {
         let model = state.items[indexPath.row]
         output?.topListCellTappedEventTriggered(self, animeInfo: model.animeInfo)
     }
+
+    func fetchNewPage() {
+        if state.searchModeActivated {
+            fetchSearchItems()
+        }
+        else {
+            fetchItems()
+        }
+    }
+
+    func searchButtonTapped(query: String) {
+        state.currentPage = 1
+        state.items = []
+        state.query = query
+        state.searchModeActivated = true
+        fetchSearchItems()
+    }
+
+    func cancelButtonTapped() {
+        state.currentPage = 1
+        state.items = []
+        state.query = ""
+        state.searchModeActivated = false
+        fetchItems()
+    }
+
+    func fetchSearchItems() {
+        dependencies.networkService.fetchSearchItems(query: state.query, page: state.currentPage) { result, error in
+            if let _ = error {
+                return
+            }
+            guard let result = result else {
+                return
+            }
+            for item in result.data {
+                let model = TopListCellModel(animeInfo: item, presenter: self)
+                self.state.items.append(model)
+            }
+            self.state.currentPage += 1
+            self.state.totalPage = result.pagination.lastVisiblePage
+            self.update(force: false, animated: true)
+        }
+    }
 }
 
 // MARK: - MoviesModuleInput

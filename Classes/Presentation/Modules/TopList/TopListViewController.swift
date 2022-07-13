@@ -17,6 +17,8 @@ final class TopListViewController: UIViewController {
 
     // MARK: - Subviews
 
+    private lazy var searchController: UISearchController = .init(searchResultsController: nil)
+
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 20
@@ -63,9 +65,15 @@ final class TopListViewController: UIViewController {
     private func setup() {
         view.backgroundColor = .main2A
         view.addSubview(collectionView)
+        setupSearchController()
         collectionView.dataSource = self
         collectionView.delegate = self
         presenter.fetchItems()
+    }
+
+    private func setupSearchController() {
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
     }
 }
 
@@ -142,12 +150,27 @@ extension TopListViewController: UIScrollViewDelegate {
         let contentHeight = scrollView.contentSize.height
         if offset > (contentHeight - scrollView.frame.height - 100) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.presenter.fetchItems()
+                self.presenter.fetchNewPage()
             }
         }
     }
 
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         collectionView.reloadData()
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension TopListViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        presenter.searchButtonTapped(query: searchBar.text ?? "")
+        collectionView.contentOffset = .zero
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        presenter.cancelButtonTapped()
+        collectionView.contentOffset = .zero
     }
 }

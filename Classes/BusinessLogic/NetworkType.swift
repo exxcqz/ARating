@@ -9,7 +9,7 @@ import Foundation
 
 enum NetworkType {
     case getTopList(page: Int)
-    case getSearch(query: String, page: Int)
+    case getSearchItems(query: String, page: Int)
     case getAnimeByID(id: Int)
     case getRecommendationsList(id: Int)
 
@@ -19,7 +19,7 @@ enum NetworkType {
 
     var path: String {
         switch self {
-        case .getSearch(let query, let page):
+        case .getSearchItems(let query, let page):
             var path = "top/anime"
             guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
                 return path
@@ -39,7 +39,7 @@ enum NetworkType {
         let url = URL(string: path, relativeTo: baseURL)
         var request = URLRequest(url: url!)
         switch self {
-        case .getSearch:
+        case .getSearchItems:
             request.httpMethod = "GET"
             return request
         case .getTopList:

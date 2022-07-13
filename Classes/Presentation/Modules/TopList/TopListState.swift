@@ -12,4 +12,6 @@ final class TopListState {
     var currentPage: Int = 1
     var totalPage: Int = 1
     var isEventScroll: Bool = false
+    var searchModeActivated: Bool = false
+    var query: String = ""
 }

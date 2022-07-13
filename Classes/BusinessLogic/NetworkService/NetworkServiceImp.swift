@@ -27,6 +27,24 @@ final class NetworkServiceImp: NetworkService {
         }
     }
 
+    func fetchSearchItems(query: String, page: Int, response: @escaping (DataResult?, Error?) -> Void) {
+        let request = NetworkType.getSearchItems(query: query, page: page).request
+        NetworkRequest.shared.requestData(request: request) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let dataResult = try JSONDecoder().decode(DataResult.self, from: data)
+                    response(dataResult, nil)
+                } catch let jsonError {
+                    print("Failed decode JSON", jsonError)
+                }
+            case .failure(let error):
+                print("Error fetch data: \(error.localizedDescription)")
+                response(nil, error)
+            }
+        }
+    }
+
     func fetchAnimeById(id: Int, response: @escaping (AnimeById?, Error?) -> Void) {
         let request = NetworkType.getAnimeByID(id: id).request
         NetworkRequest.shared.requestData(request: request) { result in
