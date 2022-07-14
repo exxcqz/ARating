@@ -16,6 +16,7 @@ class AnimeModel: Object {
     @Persisted var englishTitle: String?
     @Persisted var type: String?
     @Persisted var source: String?
+    @Persisted var episodes: Int?
     @Persisted var status: String?
     @Persisted var score: Double?
     @Persisted var rank: Int?
@@ -34,6 +35,7 @@ class AnimeModel: Object {
         self.title = animeInfo.englishTitle ?? animeInfo.title ?? ""
         self.englishTitle = animeInfo.englishTitle
         self.type = animeInfo.type
+        self.episodes = animeInfo.episodes
         self.status = animeInfo.status
         self.score = animeInfo.score
         self.rank = animeInfo.rank

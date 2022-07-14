@@ -17,6 +17,7 @@ final class AnimeDetailsState {
     var rating: Double
     var synopsis: String
     var genres: String = ""
+    var episodes: Int
     var imageViewScale: CGFloat = 1
     var isNavigationBarHidden: Bool = true
     var isFavorite: Bool = false
@@ -26,6 +27,7 @@ final class AnimeDetailsState {
         self.title = animeModel.englishTitle ?? animeModel.title ?? ""
         self.year = animeModel.year ?? 0
         self.rating = animeModel.score ?? 0
+        self.episodes = animeModel.episodes ?? 0
         self.synopsis = animeModel.synopsis ?? ""
     }
 }

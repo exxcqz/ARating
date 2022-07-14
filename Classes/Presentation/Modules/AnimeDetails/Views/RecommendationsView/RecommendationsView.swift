@@ -15,7 +15,7 @@ final class RecommendationsView: UIView {
 
     private lazy var recommendationsLabel: UILabel = {
         let view = UILabel()
-        view.font = .proDisplayBoldFont(ofSize: 18)
+        view.font = .proDisplayBoldFont(ofSize: 20)
         view.text = L10n.Animedetails.Recommendations.title
         view.textColor = .main1A
         view.textAlignment = .left

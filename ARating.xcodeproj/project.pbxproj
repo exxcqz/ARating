@@ -75,6 +75,9 @@
 		11A65C39287D885300E24418 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C38287D885300E24418 /* TabBarModel.swift */; };
 		11A65C3B287E928500E24418 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C3A287E928500E24418 /* CacheService.swift */; };
 		11A65C3E287E92BB00E24418 /* CacheServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C3D287E92BB00E24418 /* CacheServiceImp.swift */; };
+		11A65C402880091F00E24418 /* AnimeDetailsEpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C3F2880091D00E24418 /* AnimeDetailsEpisodesView.swift */; };
+		11A65C4328801D6C00E24418 /* EpisodesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4228801D6C00E24418 /* EpisodesModule.swift */; };
+		11A65C4528801D7900E24418 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4428801D7900E24418 /* EpisodesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -163,6 +166,9 @@
 		11A65C38287D885300E24418 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		11A65C3A287E928500E24418 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		11A65C3D287E92BB00E24418 /* CacheServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheServiceImp.swift; sourceTree = "<group>"; };
+		11A65C3F2880091D00E24418 /* AnimeDetailsEpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsEpisodesView.swift; sourceTree = "<group>"; };
+		11A65C4228801D6C00E24418 /* EpisodesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesModule.swift; sourceTree = "<group>"; };
+		11A65C4428801D7900E24418 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +291,7 @@
 		116CDC81286B1F3A0035AF34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				11A65C4128801D5500E24418 /* Episodes */,
 				116E83512872BB5300B6E457 /* Bookmarks */,
 				116CDCFC286D9D8E0035AF34 /* AnimeDetails */,
 				116CDCB6286C05110035AF34 /* TabBar */,
@@ -422,6 +429,7 @@
 			children = (
 				11A65C2E287D2DF100E24418 /* RecommendationsView */,
 				116E83562872D3C700B6E457 /* SynopsisViewController.swift */,
+				11A65C3F2880091D00E24418 /* AnimeDetailsEpisodesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -451,6 +459,15 @@
 				11A65C3D287E92BB00E24418 /* CacheServiceImp.swift */,
 			);
 			path = CacheService;
+			sourceTree = "<group>";
+		};
+		11A65C4128801D5500E24418 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				11A65C4228801D6C00E24418 /* EpisodesModule.swift */,
+				11A65C4428801D7900E24418 /* EpisodesViewController.swift */,
+			);
+			path = Episodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +573,7 @@
 			files = (
 				112648E52876F30B00EF9D67 /* BookmarksViewController.swift in Sources */,
 				11A65C39287D885300E24418 /* TabBarModel.swift in Sources */,
+				11A65C4528801D7900E24418 /* EpisodesViewController.swift in Sources */,
 				1126558B287BFD4C00894134 /* RecommendationsList.swift in Sources */,
 				116CDCF3286D86D00035AF34 /* TopListIndicatorViewCell.swift in Sources */,
 				116CDCEB286C73340035AF34 /* DataResult.swift in Sources */,
@@ -577,6 +595,7 @@
 				116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */,
 				112648F22877E0BE00EF9D67 /* AnimeById.swift in Sources */,
 				116CDCCB286C0F200035AF34 /* AppCoordinator.swift in Sources */,
+				11A65C4328801D6C00E24418 /* EpisodesModule.swift in Sources */,
 				116CDCBE286C05FF0035AF34 /* TopListPresenter.swift in Sources */,
 				116CDC69286B1DEF0035AF34 /* AppDelegate.swift in Sources */,
 				11A65C2D287D2AF600E24418 /* RecommendationsView.swift in Sources */,
@@ -593,6 +612,7 @@
 				116CDCD5286C3EA20035AF34 /* UIColor+Rgb.swift in Sources */,
 				116CDD02286DBB960035AF34 /* AnimeDetailsState.swift in Sources */,
 				11A65C3B287E928500E24418 /* CacheService.swift in Sources */,
+				11A65C402880091F00E24418 /* AnimeDetailsEpisodesView.swift in Sources */,
 				112648EB2876F33500EF9D67 /* BookmarksState.swift in Sources */,
 				11A65C3E287E92BB00E24418 /* CacheServiceImp.swift in Sources */,
 				11A65C32287D3A3500E24418 /* RecommendedAnime.swift in Sources */,

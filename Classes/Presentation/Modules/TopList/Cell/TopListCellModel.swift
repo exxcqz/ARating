@@ -27,7 +27,7 @@ final class TopListCellModel {
 
     private func fetchImage() {
         let imageUrl = animeInfo.images.jpg.imageUrl
-               if let image = presenter.dependencies.cacheService.getObject(forKey: imageUrl) {
+        if let image = presenter.dependencies.cacheService.getObject(forKey: imageUrl) {
             self.image = image
             return
         }

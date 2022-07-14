@@ -119,6 +119,14 @@ final class AnimeDetailsViewController: UIViewController {
         return view
     }()
 
+    private lazy var episodesView: AnimeDetailsEpisodesView = {
+        let view = AnimeDetailsEpisodesView()
+        view.tapHandler = {
+            print(1)
+        }
+        return view
+    }()
+
     private lazy var bottomBackgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .main2A
@@ -137,11 +145,15 @@ final class AnimeDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    deinit {
+        print("deinit")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         indicatorView.configureFrame { maker in
@@ -170,11 +182,6 @@ final class AnimeDetailsViewController: UIViewController {
 
         scrollView.configureFrame { maker in
             maker.top().left().right().bottom()
-        }
-
-        backdropView.configureFrame { maker in
-            maker.height(1200)
-                .top().left().right()
         }
 
         scrollView.contentInset = .init(top: 330 * Layout.scaleFactorH, left: 0, bottom: 0, right: 0)
@@ -220,11 +227,18 @@ final class AnimeDetailsViewController: UIViewController {
                 .left(inset: 30)
         }
 
+        episodesView.configureFrame { maker in
+            maker.height(50)
+                .top(to: synopsisButton.nui_bottom, inset: 15)
+                .left()
+                .right()
+        }
+
         recommendationsView.configureFrame { maker in
             maker.height(200)
                 .left()
                 .right()
-                .top(to: synopsisButton.nui_bottom, inset: 10)
+                .top(to: episodesView.nui_bottom, inset: 15)
         }
 
         bottomBackgroundView.configureFrame { maker in
@@ -232,6 +246,12 @@ final class AnimeDetailsViewController: UIViewController {
                 .bottom()
                 .left()
                 .right()
+        }
+
+        backdropView.configureFrame { maker in
+            let height = recommendationsView.frame.origin.y + recommendationsView.frame.height + 500
+            maker.height(height)
+                .top().left().right()
         }
     }
 
@@ -274,6 +294,7 @@ final class AnimeDetailsViewController: UIViewController {
         backdropView.addSubview(synopsisLabel)
         backdropView.addSubview(synopsisButton)
         backdropView.addSubview(recommendationsView)
+        backdropView.addSubview(episodesView)
         view.addSubview(bookmarkButton)
         view.addSubview(navigationBackgroundView)
         view.addSubview(bottomBackgroundView)
@@ -320,6 +341,7 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
         ratingLabel.text = String(state.rating)
         genresLabel.text = state.genres
         synopsisLabel.text = state.synopsis
+        episodesView.episodesCountLabel.text = "\(state.episodes) episodes"
         viewsIsHidden(isHidden: false)
         recommendationsView.collectionView.reloadData()
 

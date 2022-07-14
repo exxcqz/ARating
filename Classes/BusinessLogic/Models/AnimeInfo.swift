@@ -14,6 +14,7 @@ struct AnimeInfo: Codable {
     let englishTitle: String?
     let type: String?
     let source: String?
+    let episodes: Int?
     let status: String?
     let score: Double?
     let rank: Int?
@@ -29,6 +30,7 @@ struct AnimeInfo: Codable {
         case images
         case title
         case englishTitle = "title_english"
+        case episodes
         case type
         case source
         case status
