@@ -173,12 +173,11 @@ extension TopListViewController: UIScrollViewDelegate {
 // MARK: - UISearchBarDelegate
 
 extension TopListViewController: UISearchBarDelegate {
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        presenter.searchButtonTapped(query: searchBar.text ?? "")
         searchBar.text = ""
         searchBar.endEditing(true)
-        searchBar.resignFirstResponder()
-        presenter.searchButtonTapped(query: searchBar.text ?? "")
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

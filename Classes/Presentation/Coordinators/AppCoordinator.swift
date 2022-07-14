@@ -28,8 +28,7 @@ final class AppCoordinator {
 
         let tabBarItems: [TabBarModel] = [
             TabBarModel(viewController: moviesModule.viewController, image: Asset.icTop.image, title: L10n.Tabbar.Top.title, tag: 0),
-            TabBarModel(viewController: UIViewController(), image: Asset.icSearch.image, title: L10n.Tabbar.Search.title, tag: 1),
-            TabBarModel(viewController: bookmarksModule.viewController, image: Asset.icBookmark.image, title: L10n.Tabbar.Bookmarks.title, tag: 2)
+            TabBarModel(viewController: bookmarksModule.viewController, image: Asset.icBookmark.image, title: L10n.Tabbar.Bookmarks.title, tag: 1)
         ]
         let tabBarModule = TabBarModule(state: TabBarState(items: tabBarItems))
         tabBarModule.output = self
