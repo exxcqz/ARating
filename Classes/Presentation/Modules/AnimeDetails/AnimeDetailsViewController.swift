@@ -342,7 +342,7 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
         genresLabel.text = state.genres
         synopsisLabel.text = state.synopsis
         episodesView.episodesCountLabel.text = "\(state.episodes) episodes"
-        viewsIsHidden(isHidden: false)
+        viewsIsHidden(isHidden: state.isViewsHidden)
         recommendationsView.collectionView.reloadData()
 
         imageViewScale = state.imageViewScale

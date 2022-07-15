@@ -78,9 +78,10 @@ final class AnimeDetailsPresenter {
 
     private func fetchImage() {
         let url = state.animeModel.largeImageUrl
-        dependencies.networkService.fetchImage(url: url) { image in
-            self.state.image = image
-            self.update(force: false, animated: true)
+        dependencies.networkService.fetchImage(url: url) { [weak self] image in
+            self?.state.image = image
+            self?.state.isViewsHidden = false
+            self?.update(force: false, animated: true)
         }
     }
 

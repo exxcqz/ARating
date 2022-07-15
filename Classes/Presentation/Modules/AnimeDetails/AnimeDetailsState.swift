@@ -21,6 +21,7 @@ final class AnimeDetailsState {
     var imageViewScale: CGFloat = 1
     var isNavigationBarHidden: Bool = true
     var isFavorite: Bool = false
+    var isViewsHidden: Bool = true
 
     init(animeModel: AnimeModel) {
         self.animeModel = AnimeModel(value: animeModel)
