@@ -95,7 +95,7 @@ extension EpisodesViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
-        if offset > (contentHeight - scrollView.frame.height) {
+        if offset > (contentHeight - scrollView.frame.height - 200) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.presenter.fetchEpisodes()
             }
