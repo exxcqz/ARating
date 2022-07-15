@@ -81,36 +81,11 @@ final class AnimeDetailsViewController: UIViewController {
         return view
     }()
 
-    private lazy var ratingLabel: UILabel = {
-        let view = UILabel()
-        view.font = .proDisplayBoldFont(ofSize: 15)
-        view.textColor = .main1A
-        view.textAlignment = .center
-        return view
-    }()
-
-    private lazy var genresLabel: UILabel = {
-        let view = UILabel()
-        view.font = .proTextSemiboldFont(ofSize: 13)
-        view.textColor = .main1A
-        view.textAlignment = .center
-        return view
-    }()
-
-    private lazy var synopsisLabel: UILabel = {
-        let view = UILabel()
-        view.font = .proDisplayRegularFont(ofSize: 18)
-        view.numberOfLines = 0
-        view.textColor = .main1A
-        view.textAlignment = .left
-        return view
-    }()
-
-    private lazy var synopsisButton: UIButton = {
-        let view = UIButton(type: .custom)
-        view.setTitle("Show all text", for: .normal)
-        view.setTitleColor(.main3A, for: .normal)
-        view.addTarget(self, action: #selector(synopsisButtonTapped), for: .touchUpInside)
+    private lazy var descriptionView: AnimeDetailsDescriptionView = {
+        let view = AnimeDetailsDescriptionView()
+        view.synopsisTapHandler = {
+            self.presenter.presentSynopsisViewController()
+        }
         return view
     }()
 
@@ -200,36 +175,16 @@ final class AnimeDetailsViewController: UIViewController {
                 .right(inset: 30)
         }
 
-        ratingLabel.configureFrame { maker in
-            maker.sizeToFit()
+        descriptionView.configureFrame { maker in
+            maker.height(205)
                 .top(to: titleLabel.nui_bottom, inset: 7)
-                .centerX()
-        }
-
-        genresLabel.configureFrame { maker in
-            maker.sizeToFit()
-                .top(to: ratingLabel.nui_bottom, inset: 7)
-                .left(inset: 30)
-                .right(inset: 30)
-                .centerX()
-        }
-
-        synopsisLabel.configureFrame { maker in
-            maker.height(120)
-                .top(to: genresLabel.nui_bottom, inset: 5)
-                .left(inset: 30)
-                .right(inset: 30)
-        }
-
-        synopsisButton.configureFrame { maker in
-            maker.sizeToFit()
-                .top(to: synopsisLabel.nui_bottom, inset: 3)
-                .left(inset: 30)
+                .left()
+                .right()
         }
 
         episodesView.configureFrame { maker in
             maker.height(50)
-                .top(to: synopsisButton.nui_bottom, inset: 15)
+                .top(to: descriptionView.nui_bottom, inset: 15)
                 .left()
                 .right()
         }
@@ -261,10 +216,6 @@ final class AnimeDetailsViewController: UIViewController {
         presenter.addToFavorites()
     }
 
-    @objc private func synopsisButtonTapped() {
-        presenter.presentSynopsisViewController()
-    }
-
     @objc private func backButtonTapped() {
         presenter.backButtonTapped()
     }
@@ -289,10 +240,7 @@ final class AnimeDetailsViewController: UIViewController {
         scrollView.addSubview(backdropView)
         backdropView.addSubview(dividerView)
         backdropView.addSubview(titleLabel)
-        backdropView.addSubview(ratingLabel)
-        backdropView.addSubview(genresLabel)
-        backdropView.addSubview(synopsisLabel)
-        backdropView.addSubview(synopsisButton)
+        backdropView.addSubview(descriptionView)
         backdropView.addSubview(recommendationsView)
         backdropView.addSubview(episodesView)
         view.addSubview(bookmarkButton)
@@ -338,9 +286,9 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
     func update(with state: AnimeDetailsState, force: Bool, animated: Bool) {
         imageView.image = state.image
         titleLabel.text = state.title
-        ratingLabel.text = String(state.rating)
-        genresLabel.text = state.genres
-        synopsisLabel.text = state.synopsis
+        descriptionView.ratingLabel.text = String(state.rating)
+        descriptionView.genresLabel.text = state.genres
+        descriptionView.synopsisLabel.text = state.synopsis
         episodesView.episodesCountLabel.text = "\(state.episodes) episodes"
         viewsIsHidden(isHidden: state.isViewsHidden)
         recommendationsView.collectionView.reloadData()

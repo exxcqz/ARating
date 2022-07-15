@@ -84,6 +84,7 @@
 		11A65C4D288032CB00E24418 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4C288032CB00E24418 /* Episodes.swift */; };
 		11A65C5028803FA500E24418 /* EpisodesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4F28803FA500E24418 /* EpisodesCellModel.swift */; };
 		11A65C5228803FBA00E24418 /* EpisodesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C5128803FBA00E24418 /* EpisodesViewCell.swift */; };
+		11A65C542881814D00E24418 /* AnimeDetailsDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C532881814C00E24418 /* AnimeDetailsDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -181,6 +182,7 @@
 		11A65C4C288032CB00E24418 /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		11A65C4F28803FA500E24418 /* EpisodesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCellModel.swift; sourceTree = "<group>"; };
 		11A65C5128803FBA00E24418 /* EpisodesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewCell.swift; sourceTree = "<group>"; };
+		11A65C532881814C00E24418 /* AnimeDetailsDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +446,7 @@
 				11A65C2E287D2DF100E24418 /* RecommendationsView */,
 				116E83562872D3C700B6E457 /* SynopsisViewController.swift */,
 				11A65C3F2880091D00E24418 /* AnimeDetailsEpisodesView.swift */,
+				11A65C532881814C00E24418 /* AnimeDetailsDescriptionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				112648F22877E0BE00EF9D67 /* AnimeById.swift in Sources */,
 				116CDCCB286C0F200035AF34 /* AppCoordinator.swift in Sources */,
 				11A65C4328801D6C00E24418 /* EpisodesModule.swift in Sources */,
+				11A65C542881814D00E24418 /* AnimeDetailsDescriptionView.swift in Sources */,
 				116CDCBE286C05FF0035AF34 /* TopListPresenter.swift in Sources */,
 				116CDC69286B1DEF0035AF34 /* AppDelegate.swift in Sources */,
 				11A65C2D287D2AF600E24418 /* RecommendationsView.swift in Sources */,
