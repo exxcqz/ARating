@@ -82,6 +82,17 @@ final class EpisodesViewCell: UICollectionViewCell {
         }
     }
 
+    func changeFillerLabel(with fillerValue: Bool) {
+        if fillerValue {
+            fillerLabel.font = .proDisplayBoldFont(ofSize: 12)
+            fillerLabel.textColor = .main3A
+        }
+        else {
+            fillerLabel.font = .proDisplayMediumFont(ofSize: 12)
+            fillerLabel.textColor = .main1A
+        }
+    }
+
     // MARK: - Private
 
     private func setup() {

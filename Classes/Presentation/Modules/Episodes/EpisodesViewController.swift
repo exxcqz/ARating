@@ -81,8 +81,9 @@ extension EpisodesViewController: UICollectionViewDataSource {
         let model = presenter.state.items[indexPath.row]
         cell?.titleLabel.text = "\(model.id). \(model.title ?? "")"
         cell?.scoreLabel.text = "Score: \(model.score ?? 0)"
-        let filler: String = model.filler ? "Yes":"No"
-        cell?.fillerLabel.text = "Filler: \(filler)"
+        let fillerText: String = model.filler ? "Yes":"No"
+        cell?.fillerLabel.text = "Filler: \(fillerText)"
+        cell?.changeFillerLabel(with: model.filler)
         return cell ?? UICollectionViewCell()
     }
 }
