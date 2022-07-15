@@ -12,6 +12,7 @@ protocol AnimeDetailsModuleOutput {
     func animeDetailsSynopsisTappedEventTriggered(synopsis: String)
     func animeDetailsBackButtonEventTriggered()
     func animeDetailsRecommendationCellEventTriggered(animeInfo: AnimeInfo)
+    func animeDetailsEpisodesButtonEventTriggered(id: Int, title: String)
 }
 
 protocol AnimeDetailsModuleInput: AnyObject {

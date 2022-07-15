@@ -122,7 +122,7 @@ final class AnimeDetailsViewController: UIViewController {
     private lazy var episodesView: AnimeDetailsEpisodesView = {
         let view = AnimeDetailsEpisodesView()
         view.tapHandler = {
-            print(1)
+            self.presenter.episodesButtonTapped()
         }
         return view
     }()
@@ -360,7 +360,7 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
             titleLabel.alpha = 1
         }
         else {
-            navigationItem.title = presenter.state.title
+            navigationItem.title = state.title
             navigationBackgroundView.backgroundColor = .white
             titleLabel.alpha = 0
         }

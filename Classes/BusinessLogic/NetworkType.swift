@@ -12,6 +12,7 @@ enum NetworkType {
     case getSearchItems(query: String, page: Int)
     case getAnimeByID(id: Int)
     case getRecommendationsList(id: Int)
+    case getEpisodes(id: Int, page: Int)
 
     var baseURL: URL {
         return URL(string: "https://api.jikan.moe/v4/")!
@@ -32,6 +33,8 @@ enum NetworkType {
             return "anime/\(id)"
         case .getRecommendationsList(let id):
             return "anime/\(id)/recommendations"
+        case .getEpisodes(let id, let page):
+            return "anime/\(id)/episodes?page=\(page)"
         }
     }
 
@@ -49,6 +52,9 @@ enum NetworkType {
             request.httpMethod = "GET"
             return request
         case .getRecommendationsList:
+            request.httpMethod = "GET"
+            return request
+        case .getEpisodes:
             request.httpMethod = "GET"
             return request
         }

@@ -78,6 +78,12 @@
 		11A65C402880091F00E24418 /* AnimeDetailsEpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C3F2880091D00E24418 /* AnimeDetailsEpisodesView.swift */; };
 		11A65C4328801D6C00E24418 /* EpisodesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4228801D6C00E24418 /* EpisodesModule.swift */; };
 		11A65C4528801D7900E24418 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4428801D7900E24418 /* EpisodesViewController.swift */; };
+		11A65C472880245A00E24418 /* EpisodesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C462880245A00E24418 /* EpisodesPresenter.swift */; };
+		11A65C492880246700E24418 /* EpisodesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C482880246700E24418 /* EpisodesState.swift */; };
+		11A65C4B28802D9200E24418 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4A28802D9200E24418 /* EpisodeModel.swift */; };
+		11A65C4D288032CB00E24418 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4C288032CB00E24418 /* Episodes.swift */; };
+		11A65C5028803FA500E24418 /* EpisodesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4F28803FA500E24418 /* EpisodesCellModel.swift */; };
+		11A65C5228803FBA00E24418 /* EpisodesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C5128803FBA00E24418 /* EpisodesViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -169,6 +175,12 @@
 		11A65C3F2880091D00E24418 /* AnimeDetailsEpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsEpisodesView.swift; sourceTree = "<group>"; };
 		11A65C4228801D6C00E24418 /* EpisodesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesModule.swift; sourceTree = "<group>"; };
 		11A65C4428801D7900E24418 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
+		11A65C462880245A00E24418 /* EpisodesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesPresenter.swift; sourceTree = "<group>"; };
+		11A65C482880246700E24418 /* EpisodesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesState.swift; sourceTree = "<group>"; };
+		11A65C4A28802D9200E24418 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		11A65C4C288032CB00E24418 /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		11A65C4F28803FA500E24418 /* EpisodesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCellModel.swift; sourceTree = "<group>"; };
+		11A65C5128803FBA00E24418 /* EpisodesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,6 +408,8 @@
 				1126558A287BFD4C00894134 /* RecommendationsList.swift */,
 				11A65C2F287D39F300E24418 /* RecommendationItem.swift */,
 				11A65C31287D3A3500E24418 /* RecommendedAnime.swift */,
+				11A65C4A28802D9200E24418 /* EpisodeModel.swift */,
+				11A65C4C288032CB00E24418 /* Episodes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,10 +478,22 @@
 		11A65C4128801D5500E24418 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				11A65C4E28803F9700E24418 /* Cell */,
 				11A65C4228801D6C00E24418 /* EpisodesModule.swift */,
 				11A65C4428801D7900E24418 /* EpisodesViewController.swift */,
+				11A65C462880245A00E24418 /* EpisodesPresenter.swift */,
+				11A65C482880246700E24418 /* EpisodesState.swift */,
 			);
 			path = Episodes;
+			sourceTree = "<group>";
+		};
+		11A65C4E28803F9700E24418 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				11A65C4F28803FA500E24418 /* EpisodesCellModel.swift */,
+				11A65C5128803FBA00E24418 /* EpisodesViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112648E52876F30B00EF9D67 /* BookmarksViewController.swift in Sources */,
+				11A65C5028803FA500E24418 /* EpisodesCellModel.swift in Sources */,
 				11A65C39287D885300E24418 /* TabBarModel.swift in Sources */,
 				11A65C4528801D7900E24418 /* EpisodesViewController.swift in Sources */,
 				1126558B287BFD4C00894134 /* RecommendationsList.swift in Sources */,
@@ -580,6 +607,7 @@
 				116CDCE3286C6A870035AF34 /* NetworkType.swift in Sources */,
 				11A65C30287D39F300E24418 /* RecommendationItem.swift in Sources */,
 				116CDCDE286C68B60035AF34 /* NetworkService.swift in Sources */,
+				11A65C492880246700E24418 /* EpisodesState.swift in Sources */,
 				116CDCC6286C0B390035AF34 /* TabBarState.swift in Sources */,
 				116CDCC5286C0B390035AF34 /* TabBarController.swift in Sources */,
 				116CDCEF286C76B40035AF34 /* AnimeInfo.swift in Sources */,
@@ -591,6 +619,7 @@
 				116CDCFE286DBB780035AF34 /* AnimeDetailsModule.swift in Sources */,
 				112648F02876F5EB00EF9D67 /* BookmarkCellModel.swift in Sources */,
 				116CDCC3286C0B390035AF34 /* TabBarPresenter.swift in Sources */,
+				11A65C4D288032CB00E24418 /* Episodes.swift in Sources */,
 				112648DF2876968D00EF9D67 /* DatabaseServiceImp.swift in Sources */,
 				116CDCD3286C258E0035AF34 /* UIColor+App.swift in Sources */,
 				112648F22877E0BE00EF9D67 /* AnimeById.swift in Sources */,
@@ -606,6 +635,7 @@
 				112648DD2876967D00EF9D67 /* DatabaseService.swift in Sources */,
 				112648E12876973E00EF9D67 /* AnimeModel.swift in Sources */,
 				116E83572872D3C700B6E457 /* SynopsisViewController.swift in Sources */,
+				11A65C4B28802D9200E24418 /* EpisodeModel.swift in Sources */,
 				11A65C35287D3F1B00E24418 /* RecommendationsViewCell.swift in Sources */,
 				116CDC6B286B1DEF0035AF34 /* SceneDelegate.swift in Sources */,
 				116CDD00286DBB8A0035AF34 /* AnimeDetailsViewController.swift in Sources */,
@@ -626,6 +656,8 @@
 				116CDD06286EC66E0035AF34 /* Layout.swift in Sources */,
 				116CDCBC286C05E30035AF34 /* TopListViewController.swift in Sources */,
 				116CDCE5286C70230035AF34 /* NetworkRequest.swift in Sources */,
+				11A65C472880245A00E24418 /* EpisodesPresenter.swift in Sources */,
+				11A65C5228803FBA00E24418 /* EpisodesViewCell.swift in Sources */,
 				112648E72876F31800EF9D67 /* BookmarksPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,8 +10,8 @@ import UIKit
 final class AppCoordinator {
 
     private var window: UIWindow?
-    private var bookmarksModule: BookmarksModule?
-    private var rootViewController: UINavigationController?
+    private weak var bookmarksModule: BookmarksModule?
+    private weak var rootViewController: UINavigationController?
 
     func start(with scene: UIWindowScene) {
         window = UIWindow(windowScene: scene)
@@ -103,6 +103,11 @@ extension AppCoordinator: AnimeDetailsModuleOutput {
         let animeModel = AnimeModel(animeInfo: animeInfo)
         let animeDetailsModule = createAnimeDetailsModule(animeModel: animeModel)
         rootViewController?.pushViewController(animeDetailsModule.viewController, animated: false)
+    }
+
+    func animeDetailsEpisodesButtonEventTriggered(id: Int, title: String) {
+        let episodesModule = EpisodesModule(state: .init(id: id, title: title))
+        rootViewController?.pushViewController(episodesModule.viewController, animated: true)
     }
 }
 

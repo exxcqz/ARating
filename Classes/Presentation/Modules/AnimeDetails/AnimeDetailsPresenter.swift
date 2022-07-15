@@ -70,17 +70,8 @@ final class AnimeDetailsPresenter {
         }
     }
 
-    func fetchRecommendedItems() {
-        dependencies.networkService.fetchRecommendationsList(id: state.animeModel.id) { result, error in
-            if let _ = error {
-                return
-            }
-            guard let result = result else {
-                return
-            }
-            self.state.recommendationsModels = result.data.map { RecommendationsCellModel(recommendedItem: $0, presenter: self) }
-            self.update(force: false, animated: true)
-        }
+    func episodesButtonTapped() {
+        output?.animeDetailsEpisodesButtonEventTriggered(id: state.animeModel.id, title: state.title)
     }
 
     // MARK: - Private
@@ -98,6 +89,19 @@ final class AnimeDetailsPresenter {
         state.genres = genres.joined(separator: ", ")
         let id = state.animeModel.id
         state.isFavorite = dependencies.databaseService.objectIsContained(id: id)
+    }
+
+    private func fetchRecommendedItems() {
+        dependencies.networkService.fetchRecommendationsList(id: state.animeModel.id) { result, error in
+            if let _ = error {
+                return
+            }
+            guard let result = result else {
+                return
+            }
+            self.state.recommendationsModels = result.data.map { RecommendationsCellModel(recommendedItem: $0, presenter: self) }
+            self.update(force: false, animated: true)
+        }
     }
 }
 
