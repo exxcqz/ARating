@@ -31,9 +31,9 @@ final class BookmarkCellModel {
             self.image = image
             return
         }
-        presenter.dependencies.networkService.fetchImage(url: imageUrl) { result in
-            self.image = result
-            self.presenter.dependencies.cacheService.setObject(image: result, forKey: imageUrl)
+        presenter.dependencies.networkService.fetchImage(url: imageUrl) { [weak self] result in
+            self?.image = result
+            self?.presenter.dependencies.cacheService.setObject(image: result, forKey: imageUrl)
         }
     }
 }

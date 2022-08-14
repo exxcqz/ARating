@@ -31,8 +31,8 @@ final class TopListCellModel {
             self.image = image
             return
         }
-        presenter.dependencies.networkService.fetchImage(url: imageUrl) { result in
-            self.image = result
+        presenter.dependencies.networkService.fetchImage(url: imageUrl) { [weak self] result in
+            self?.image = result
         }
     }
 }

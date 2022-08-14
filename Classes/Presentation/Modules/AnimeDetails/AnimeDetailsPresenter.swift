@@ -59,14 +59,14 @@ final class AnimeDetailsPresenter {
 
     func cellTappedEventTriggered(with indexPath: IndexPath) {
         let id = state.recommendationsModels[indexPath.row].id
-        dependencies.networkService.fetchAnimeById(id: id) { result, error in
+        dependencies.networkService.fetchAnimeById(id: id) { [weak self] result, error in
             if let _ = error {
                 return
             }
             guard let result = result else {
                 return
             }
-            self.output?.animeDetailsRecommendationCellEventTriggered(animeInfo: result.data)
+            self?.output?.animeDetailsRecommendationCellEventTriggered(animeInfo: result.data)
         }
     }
 
@@ -93,11 +93,11 @@ final class AnimeDetailsPresenter {
     }
 
     private func fetchRecommendedItems() {
-        dependencies.networkService.fetchRecommendationsList(id: state.animeModel.id) { result, error in
+        dependencies.networkService.fetchRecommendationsList(id: state.animeModel.id) { [weak self] result, error in
             if let _ = error {
                 return
             }
-            guard let result = result else {
+            guard let result = result, let self = self else {
                 return
             }
             self.state.recommendationsModels = result.data.map { RecommendationsCellModel(recommendedItem: $0, presenter: self) }

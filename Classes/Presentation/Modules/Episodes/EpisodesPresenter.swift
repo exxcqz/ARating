@@ -28,7 +28,7 @@ final class EpisodesPresenter {
 
     func fetchEpisodes() {
         if state.currentPage <= state.totalPage {
-            dependencies.networkService.fetchEpisodes(id: state.id, page: state.currentPage) { [weak self ] result, error in
+            dependencies.networkService.fetchEpisodes(id: state.id, page: state.currentPage) { [weak self] result, error in
                 if let _ = error {
                     return
                 }

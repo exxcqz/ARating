@@ -25,11 +25,11 @@ final class TopListPresenter {
 
     func fetchTopItems() {
         if !state.isEventScroll {
-            dependencies.networkService.fetchTopListItems(page: state.currentPage) { result, error in
+            dependencies.networkService.fetchTopListItems(page: state.currentPage) { [weak self] result, error in
                 if let _ = error {
                     return
                 }
-                guard let result = result else {
+                guard let result = result, let self = self else {
                     return
                 }
                 for item in result.data {
@@ -70,11 +70,11 @@ final class TopListPresenter {
     }
 
     func fetchSearchItems() {
-        dependencies.networkService.fetchSearchItems(query: state.query, page: state.currentPage) { result, error in
+        dependencies.networkService.fetchSearchItems(query: state.query, page: state.currentPage) { [weak self] result, error in
             if let _ = error {
                 return
             }
-            guard let result = result else {
+            guard let result = result, let self = self else {
                 return
             }
             for item in result.data {
