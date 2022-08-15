@@ -85,7 +85,18 @@
 		11A65C5028803FA500E24418 /* EpisodesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C4F28803FA500E24418 /* EpisodesCellModel.swift */; };
 		11A65C5228803FBA00E24418 /* EpisodesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C5128803FBA00E24418 /* EpisodesViewCell.swift */; };
 		11A65C542881814D00E24418 /* AnimeDetailsDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A65C532881814C00E24418 /* AnimeDetailsDescriptionView.swift */; };
+		11B00A9028AA7048009B7919 /* ARatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B00A8F28AA7048009B7919 /* ARatingTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11B00A9128AA7048009B7919 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116CDC5D286B1DEF0035AF34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 116CDC64286B1DEF0035AF34;
+			remoteInfo = ARating;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		116CDCA8286B24E70035AF34 /* Embed Frameworks */ = {
@@ -183,6 +194,8 @@
 		11A65C4F28803FA500E24418 /* EpisodesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCellModel.swift; sourceTree = "<group>"; };
 		11A65C5128803FBA00E24418 /* EpisodesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewCell.swift; sourceTree = "<group>"; };
 		11A65C532881814C00E24418 /* AnimeDetailsDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsDescriptionView.swift; sourceTree = "<group>"; };
+		11B00A8D28AA7048009B7919 /* ARatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARatingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B00A8F28AA7048009B7919 /* ARatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARatingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +205,13 @@
 			files = (
 				116CDCA6286B24E70035AF34 /* Framezilla.xcframework in Frameworks */,
 				112648D92876962E00EF9D67 /* Realm.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B00A8A28AA7048009B7919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +243,7 @@
 				116CDC7D286B1F0A0035AF34 /* Resources */,
 				116CDC7C286B1F050035AF34 /* Classes */,
 				116CDC67286B1DEF0035AF34 /* ARating */,
+				11B00A8E28AA7048009B7919 /* ARatingTests */,
 				116CDC66286B1DEF0035AF34 /* Products */,
 				116CDCA3286B23EE0035AF34 /* Frameworks */,
 			);
@@ -232,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				116CDC65286B1DEF0035AF34 /* ARating.app */,
+				11B00A8D28AA7048009B7919 /* ARatingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -499,6 +521,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		11B00A8E28AA7048009B7919 /* ARatingTests */ = {
+			isa = PBXGroup;
+			children = (
+				11B00A8F28AA7048009B7919 /* ARatingTests.swift */,
+			);
+			path = ARatingTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -521,6 +551,24 @@
 			productReference = 116CDC65286B1DEF0035AF34 /* ARating.app */;
 			productType = "com.apple.product-type.application";
 		};
+		11B00A8C28AA7048009B7919 /* ARatingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B00A9528AA7048009B7919 /* Build configuration list for PBXNativeTarget "ARatingTests" */;
+			buildPhases = (
+				11B00A8928AA7048009B7919 /* Sources */,
+				11B00A8A28AA7048009B7919 /* Frameworks */,
+				11B00A8B28AA7048009B7919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11B00A9228AA7048009B7919 /* PBXTargetDependency */,
+			);
+			name = ARatingTests;
+			productName = ARatingTests;
+			productReference = 11B00A8D28AA7048009B7919 /* ARatingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -528,11 +576,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					116CDC64286B1DEF0035AF34 = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					11B00A8C28AA7048009B7919 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 116CDC64286B1DEF0035AF34;
 					};
 				};
 			};
@@ -550,6 +602,7 @@
 			projectRoot = "";
 			targets = (
 				116CDC64286B1DEF0035AF34 /* ARating */,
+				11B00A8C28AA7048009B7919 /* ARatingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -569,6 +622,13 @@
 				116CDC9F286B23B90035AF34 /* SFProDisplayBold.otf in Resources */,
 				116CDC9E286B23B90035AF34 /* SFProTextSemibold.ttf in Resources */,
 				116CDCAA286B25500035AF34 /* swiftgen.yml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B00A8B28AA7048009B7919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +726,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11B00A8928AA7048009B7919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B00A9028AA7048009B7919 /* ARatingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11B00A9228AA7048009B7919 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 116CDC64286B1DEF0035AF34 /* ARating */;
+			targetProxy = 11B00A9128AA7048009B7919 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		116CDC73286B1DF40035AF34 /* LaunchScreen.storyboard */ = {
@@ -864,6 +940,44 @@
 			};
 			name = Release;
 		};
+		11B00A9328AA7048009B7919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6R24SK4QQB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.excqz.ARatingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARating.app/ARating";
+			};
+			name = Debug;
+		};
+		11B00A9428AA7048009B7919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6R24SK4QQB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.excqz.ARatingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARating.app/ARating";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -881,6 +995,15 @@
 			buildConfigurations = (
 				116CDC7A286B1DF40035AF34 /* Debug */,
 				116CDC7B286B1DF40035AF34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11B00A9528AA7048009B7919 /* Build configuration list for PBXNativeTarget "ARatingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B00A9328AA7048009B7919 /* Debug */,
+				11B00A9428AA7048009B7919 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
