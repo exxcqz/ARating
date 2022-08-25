@@ -312,6 +312,9 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
             navigationBackgroundView.backgroundColor = .white
             titleLabel.alpha = 0
         }
+
+        episodesView.openButton.isHidden = (state.episodes <= 1) ? true : false
+        recommendationsView.isHidden = state.recommendationsModels.isEmpty
         view.setNeedsLayout()
         view.layoutIfNeeded()
     }

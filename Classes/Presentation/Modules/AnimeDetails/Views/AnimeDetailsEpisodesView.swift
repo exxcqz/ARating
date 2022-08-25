@@ -32,7 +32,7 @@ final class AnimeDetailsEpisodesView: UIView {
         return view
     }()
 
-    private lazy var openButton: UIButton = {
+    private(set) lazy var openButton: UIButton = {
         let view = UIButton(type: .custom)
         view.setTitle("Check all", for: .normal)
         view.setTitleColor(.main3A, for: .normal)
