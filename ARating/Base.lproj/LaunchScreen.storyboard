@@ -17,19 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vcY-ru-k9t">
-                                <rect key="frame" x="20" y="120" width="374" height="572"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="vcY-ru-k9t">
+                                <rect key="frame" x="20" y="162" width="374" height="572"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vcY-ru-k9t" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.638393" id="2sp-QS-xhK"/>
-                            <constraint firstItem="vcY-ru-k9t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="CkQ-VF-PMP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vcY-ru-k9t" secondAttribute="bottom" constant="170" id="S3a-3o-2WV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vcY-ru-k9t" secondAttribute="trailing" constant="20" id="W5b-J4-JfI"/>
-                            <constraint firstItem="vcY-ru-k9t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WE3-iW-LfH"/>
-                            <constraint firstItem="vcY-ru-k9t" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.903382" id="eqH-MJ-g5V"/>
+                            <constraint firstItem="vcY-ru-k9t" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.903382" id="Cn8-fi-yLB"/>
+                            <constraint firstItem="vcY-ru-k9t" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Dty-ih-iJN"/>
+                            <constraint firstItem="vcY-ru-k9t" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.638393" id="OXP-KC-hiy"/>
+                            <constraint firstItem="vcY-ru-k9t" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XLq-GT-hAZ"/>
+                            <constraint firstItem="vcY-ru-k9t" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="187:448" id="q9a-TB-d62"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,7 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="989" height="808"/>
+        <image name="logo" width="2473" height="977"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
