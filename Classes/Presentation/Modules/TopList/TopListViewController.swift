@@ -74,6 +74,8 @@ final class TopListViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         presenter.fetchItems()
+
+        collectionView.accessibilityIdentifier = "topListCollection"
     }
 
     private func setupSearchController() {

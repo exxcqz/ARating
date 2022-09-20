@@ -38,6 +38,16 @@
                ReferencedContainer = "container:ARating.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "11D1942028D98247006E7EA4"
+               BuildableName = "ARatingUITests.xctest"
+               BlueprintName = "ARatingUITests"
+               ReferencedContainer = "container:ARating.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

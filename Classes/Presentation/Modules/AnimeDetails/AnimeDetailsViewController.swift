@@ -249,6 +249,8 @@ final class AnimeDetailsViewController: UIViewController {
 
         scrollView.delegate = self
         presenter.viewDidLoad()
+
+        bookmarkButton.accessibilityIdentifier = "bookmarkButton"
     }
 
     private func addCustomBackButton() {
