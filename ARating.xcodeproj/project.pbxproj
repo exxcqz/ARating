@@ -87,6 +87,8 @@
 		11B00A9028AA7048009B7919 /* ARatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B00A8F28AA7048009B7919 /* ARatingTests.swift */; };
 		11D1942428D98247006E7EA4 /* ARatingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1942328D98247006E7EA4 /* ARatingUITests.swift */; };
 		11D1942628D98247006E7EA4 /* ARatingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1942528D98247006E7EA4 /* ARatingUITestsLaunchTests.swift */; };
+		11D1946C28DAD5C9006E7EA4 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112648D6287695EE00EF9D67 /* RealmSwift.xcframework */; };
+		11D1946D28DAD5C9006E7EA4 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 112648D6287695EE00EF9D67 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				116CDCA7286B24E70035AF34 /* Framezilla.xcframework in Embed Frameworks */,
+				11D1946D28DAD5C9006E7EA4 /* RealmSwift.xcframework in Embed Frameworks */,
 				112648DA2876962E00EF9D67 /* Realm.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				116CDCA6286B24E70035AF34 /* Framezilla.xcframework in Frameworks */,
+				11D1946C28DAD5C9006E7EA4 /* RealmSwift.xcframework in Frameworks */,
 				112648D92876962E00EF9D67 /* Realm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
