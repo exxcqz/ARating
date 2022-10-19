@@ -311,6 +311,7 @@ extension AnimeDetailsViewController: AnimeDetailsViewInput {
         }
         else {
             navigationItem.title = state.title
+            navigationController?.navigationBar.setNeedsLayout()
             navigationBackgroundView.backgroundColor = .white
             titleLabel.alpha = 0
         }
