@@ -1,3 +1,3 @@
-github "rosberry/Framezilla"
+github "rosberry/Framezilla" "master"
 github "rosberry/CollectionViewTools"
 github "realm/realm-swift"
